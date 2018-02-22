@@ -1,6 +1,8 @@
 
 // breakpoint sass
 @import '../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 $bg-color: #F3F3F4;
 $theme-color: #0C273A;
@@ -10,6 +12,10 @@ $device-xs-only: 320px 768px;
 $device-md-up: 768px;
 $device-md-only: 768px 1200px;
 $device-xl-up: 1200px;
+
+$font-ai: 'Poiret One', cursive;
+$font-noto: 'Noto Sans TC', sans-serif;
+$font-context:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 @mixin scale($factor){
 	-webkit-transform: scale($factor);
@@ -80,10 +86,7 @@ $device-xl-up: 1200px;
 
 }
 
-@mixin adjust-padding {
-	@include breakpoint($device-xl-up){ padding-left: 150px; }
-	@include breakpoint($device-md-only){ padding-left: 100px; }
-}
+
 
 // adjustment
 html, body{
@@ -93,7 +96,10 @@ html, body{
     padding: 0px;
     overflow-x: hidden; 
 	background-color: $bg-color;
-
+	font-family: $font-noto;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 2.66px;
 }
 
 // components style
@@ -113,11 +119,10 @@ html, body{
 	}
 }
 
-
-
 .header {
-	@include adjust-padding;
-	@include breakpoint($device-md-only){ margin-bottom: 50px;}
+	@include breakpoint($device-md-only){ padding-left: 100px; }
+	@include breakpoint($device-xl-up){ padding-left: 150px; }
+	@include breakpoint($device-md-only){ margin-bottom: 150px;}
 	@include breakpoint($device-xl-up){	height: 100vh; }
 	.components {
 		@include breakpoint($device-md-only){
@@ -131,30 +136,58 @@ html, body{
 		}
 	}		
 	.info {
-		display: inline-block;
 		color: $theme-color;
+		@include breakpoint($device-xs-only){
+			text-align: center;
+			width: 300px;
+			margin: auto;
+		}
 		.year {
+			font-family: $font-ai;
+			line-height: 28px;
+			letter-spacing: 1.33;
+			font-size: 24px;
 		}
 		.topic {
+			@include common-image('nctuartfest', 190px, 37px, 222px, 44px, 317px, 63px);
 		}
 		.topic-english {
+			font-weight: 200;
+			font-family: $font-ai;
+			letter-spacing: 2px;
+			@include breakpoint($device-md-only){
+				font-size: 26px;
+			}
+			@include breakpoint($device-xl-up){
+				font-size: 36px;
+			}
+			line-height: 42px;
 		}
 		.date {
+			font-family: $font-ai;
+			font-size: 24px;
+			letter-spacing: 1.33px;
+			line-height: 28px;
 		}
 		.place {
+			font-weight: 300;
+			font-family: $font-noto;
+			font-size: 24px;
+			letter-spacing: 7.5px;
+			line-height: 36px;
 		}
 	}
 	.sketch {
 		@include breakpoint($device-xs-only){
 			margin: 50px auto 50px auto;
 		}
-		@include breakpoint($device-md-up){
+		@include breakpoint($device-md-only){
 			display: inline-block;
 		}
 		@include breakpoint($device-xl-up){
+			display: inline-block;
 			margin-top: -100px;
 		}
-
 		@include common-image('header-sketch', 267px, 261px, 298px, 291px, 533px, 546px);
 	}
 }
@@ -171,132 +204,95 @@ html, body{
 }
 
 .topic{
-	@include adjust-padding;
-	@include breakpoint($device-md-up){
-		margin-top: -500px;
+	@include breakpoint($device-md-only){ padding-left: 100px; }
+	@include breakpoint($device-xl-up){ padding-left: 150px; }
+
+	@include breakpoint($device-md-only){
+		margin-top: -350px;
+	}
+	@include breakpoint($device-xl-up){
+		margin-top: -400px;
 	}
 
 	.topic-english-1{
 		color: $theme-color;
-		font-size: 45px;
 		font-weight: 200;
 		letter-spacing: 10px;
 		text-align: center;
+		width: 100%;
 	}
 	.robot {
-		display: inline-block;
-		@include transform-origin;
-
-		@include breakpoint($device-xs-only){
-			width: 58px;
-			@include scale(0.52);
-		}
-		@include breakpoint($device-md-only){
-			width: 76px;
-			height: 200px;
-			margin-left: -20px;
-			@include scale(0.69);
-		}
 		@include breakpoint($device-xl-up){
-			width: 110px;
-			height: 307px;
+			margin-top: 200px;
 		}
+		@include common-image('topic-robot', 58px, 162px, 76px, 212px, 110px, 307px);
 	}
 	.intro{
-		@include breakpoint($device-xs-only){ 
-			padding: 0px 50px 0px 50px;
-			margin-top: -120px;
-		}
-		@include breakpoint($device-md-only){ 
-			display: inline-block;
-			width: 50%; 
-			padding: 0px 50px 0px 50px;
-			vertical-align: 70px;
+
+		@include breakpoint($device-md-up){ 
+			width: 400px; 
 		}
 		@include breakpoint($device-xl-up){ 
-			display: inline-block;
-			width: 40%; 
-			padding: 0px 30px 0px 30px;
-			vertical-align: -50px;
+			vertical-align: 50px;
 		}
 		.topic-english-2{
+			font-family: $font-ai;
+			margin-bottom: 50px;
 			color: $theme-color;
-			font-size: 45px;
-			font-weight: 200;
-			letter-spacing: 10px;
+			line-height: 70px;
+			font-size: 60px;
+			letter-spacing: 11px;
+
 		}
 		.intro-content{
+			font-size: 20px;
+			line-height: 36px;
+			letter-spacing: 1.67px;
 			color: $theme-color;
-			@include breakpoint($device-xs-only){
-				width: 100%;
-			}
-			@include breakpoint($device-md-up){
-				width: 300px;
-			}
-
 		}
 		.medium-articles {
 			background-color: $theme-color;
 			color: white;
 			padding: 10px;
 			@include breakpoint($device-xs-only){
+				width: 180px;
 				margin: auto;
-				text-align: center;
 			}
 		}
 	}	
 
 	.title {
-		@include breakpoint($device-md-only){
-			width: 137px;
-			margin-left: 60px;
-			@include scale(0.68);
-		}
-		@include breakpoint($device-xl-up){
-			width: 202px;
-			margin: auto;
-		}
+		@include common-image('topic-title', 0px, 0px, 137px, 32px, 202px, 47px);
 	}
 	.products {
-		@include breakpoint($device-xs-only){
-			vertical-align: 100px;
-			width: 270px;
-			@include scale(0.9);
-			@include transform-origin;
-		}
 		@include breakpoint($device-md-only){
-			vertical-align: 100px;
-			width: 186px;
-			@include scale(0.6);
+			margin-top: -50px;
+			vertical-align: 50px;
 		}
-		@include breakpoint($device-xl-up){
-			width: 304px;
-			margin: auto;
-		}
+		@include common-image('topic-products', 270px, 270px, 186px, 186px, 344px, 344px);
 	}
 	.topic-widgets-1 {
-		@include breakpoint($device-md-up){
-			display: inline-block;
-			vertical-align: 80px;
-		}
-		@include breakpoint($device-xl-up){
-			width: 20%;
+		vertical-align: top;
+		@include breakpoint($device-xs-only){
+			text-aign: center;
 		}
 	}
-	.topic-widgets-1-1 {
+	.topic-widgets-1-1{
 		@include breakpoint($device-xs-only){
-			width: 350px;
-			margin: auto;
+			width: 100%;
+			text-align: center;
+		}
+		@include breakpoint($device-md-only){
+			width: 270px;
 		}
 	}
 	.topic-widgets-2 {
+		width: 345px;
 		@include breakpoint($device-md-only){
 			vertical-align: 120px;
-			width: 30%;
 		}
 		@include breakpoint($device-xl-up){
-			vertical-align: 80px;
-			width: 30%;
+			vertical-align: 200px;
 		}
 	}
 }
@@ -308,6 +304,13 @@ html, body{
 	.list {
 		.preview {
 		}
+	}
+	.project-title {
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 24px;
+		margin-top: 6px;
+		margin-bottom: 24px;
 	}
 }
 
@@ -382,6 +385,15 @@ footer {
 			width: 694px;
 			height: 301px;
 		}
+	}
+	p {
+		transform: rotate(-1deg);
+	}
+	.footer-ai {
+		font-family: $font-ai;
+		font-size: 24px;
+		letter-spacing: 3.33px;
+		line-height: 28px;
 	}
 	.fb-fan-page{
 		margin-top: 50px;
