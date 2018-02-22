@@ -1,6 +1,8 @@
 
 // breakpoint sass
 @import '../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 $bg-color: #F3F3F4;
 $theme-color: #0C273A;
@@ -10,6 +12,10 @@ $device-xs-only: 320px 768px;
 $device-md-up: 768px;
 $device-md-only: 768px 1200px;
 $device-xl-up: 1200px;
+
+$font-ai: 'Poiret One', cursive;
+$font-noto: 'Noto Sans TC', sans-serif;
+$font-context:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 @mixin scale($factor){
 	-webkit-transform: scale($factor);
@@ -33,14 +39,17 @@ $device-xl-up: 1200px;
 }
 
 // adjustment
-html,body{
+html, body{
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
 	background-color: $bg-color;
-
+	font-family: $font-noto;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 2.66px;
 }
 
 // components style
@@ -118,8 +127,10 @@ html,body{
 			width: 30%;
 		}
 		.year {
-			font-weight: 200;
-			font-size: 28px;
+			font-family: $font-ai;
+			line-height: 28px;
+			letter-spacing: 1.33;
+			font-size: 24px;
 		}
 		.topic {
 			@include breakpoint($device-xs-up){
@@ -135,15 +146,23 @@ html,body{
 		}
 		.topic-english {
 			font-weight: 200;
-			letter-spacing: 3px;
-			font-size: 32px;
+			font-family: $font-ai;
+			letter-spacing: 2px;
+			font-size: 36px;
+			line-height: 42px;
 		}
 		.date {
-			font-weight: 200;
-			font-size: 32px;
+			font-family: $font-ai;
+			font-size: 24px;
+			letter-spacing: 1.33px;
+			line-height: 28px;
 		}
 		.place {
-			font-size: 28px;
+			font-weight: 300;
+			font-family: $font-noto;
+			font-size: 24px;
+			letter-spacing: 7.5px;
+			line-height: 36px;
 		}
 	}
 	.sketch {
@@ -248,12 +267,17 @@ html,body{
 			vertical-align: -50px;
 		}
 		.topic-english-2{
+			font-family: $font-ai;
+			font-size: 60px;
+			line-height: 70px;
+			letter-spacing: 11px;
+			margin-bottom: 50px;
 			color: $theme-color;
-			font-size: 45px;
-			font-weight: 200;
-			letter-spacing: 10px;
 		}
 		.intro-content{
+			font-size: 20px;
+			line-height: 36px;
+			letter-spacing: 1.67px;
 			color: $theme-color;
 			@include breakpoint($device-xs-only){
 				width: 100%;
@@ -353,6 +377,13 @@ html,body{
 	.list {
 		.preview {
 		}
+	}
+	.project-title {
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 24px;
+		margin-top: 6px;
+		margin-bottom: 24px;
 	}
 }
 
@@ -463,6 +494,15 @@ footer {
 			width: 694px;
 			height: 301px;
 		}
+	}
+	p {
+		transform: rotate(-1deg);
+	}
+	.footer-ai {
+		font-family: $font-ai;
+		font-size: 24px;
+		letter-spacing: 3.33px;
+		line-height: 28px;
 	}
 	.fb-fan-page{
 		margin-top: 50px;
