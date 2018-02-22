@@ -27,13 +27,66 @@ $device-xl-up: 1200px;
 	transform-origin: 0 0;
 }
 
+@mixin responsive-image($image, $xsw, $xsh, $mdw, $mdh, $xlw, $xlh){
+	@include breakpoint($device-xs-only){
+		@if $xsw or $xsw {
+			width: $xsw;
+			height: $xsh;
+			background-size: $xsw $xsh;
+		}
+		@else {
+			display: none;
+		}
+
+	}
+	@include breakpoint($device-md-only){
+		@if $mdw or $mdw {
+			width: $mdw;
+			height: $mdh;
+			background-size: $mdw $mdh;
+		}
+		@else {
+			display: none;
+		}
+	}
+	@include breakpoint($device-xl-up){
+		@if $xlw or $xlw {
+			width: $xlw;
+			height: $xlh;
+			background-size: $xlw $xlh;
+		}
+		@else {
+			display: none;
+		}
+	}
+}
+
+@mixin common-image($image, $xsw, $xsh, $mdw, $mdh, $xlw, $xlh){
+	background: url('../images/common/' + $image + '.png');
+	@include responsive-image($image, $xsw, $xsh, $mdw, $mdh, $xlw, $xlh);
+}
+
+@mixin seperate-image($image, $xsw, $xsh, $mdw, $mdh, $xlw, $xlh) {
+	@include breakpoint($device-xs-only){
+		background: url('../images/mobile/' + $image + '.png');
+	}
+	@include breakpoint($device-md-only){
+		background: url('../images/tablet/' + $image + '.png');
+	}
+	@include breakpoint($device-xl-up){
+		background: url('../images/desktop/' + $image + '.png');
+	}
+	@include responsive-image($image, $xsw, $xsh, $mdw, $mdh, $xlw, $xlh);
+
+}
+
 @mixin adjust-padding {
 	@include breakpoint($device-xl-up){ padding-left: 150px; }
 	@include breakpoint($device-md-only){ padding-left: 100px; }
 }
 
 // adjustment
-html,body{
+html, body{
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -66,144 +119,63 @@ html,body{
 	@include adjust-padding;
 	@include breakpoint($device-md-only){ margin-bottom: 50px;}
 	@include breakpoint($device-xl-up){	height: 100vh; }
-	.components{
-		@include breakpoint($device-xs-only){
-			height: 50px;
-		}
+	.components {
 		@include breakpoint($device-md-only){
-			margin-left: 180px;
-			height: 200px;
+			margin-left: 100px;
 		}
-		@include breakpoint($device-xl-up){
-			height: 320px;
+		.light {
+			@include common-image('header-light', 29px, 109px, 0px, 0px, 81px, 310px);
 		}
-
-		.light{
-			display: inline-block;
-			@include breakpoint($device-xs-only){
-				width: 50px;
-				@include transform-origin;	
-				@include scale(0.36);
-			}
-			@include breakpoint($device-md-only){
-				display: none;
-			}
-			@include breakpoint($device-xl-up){
-				width: 150px;
-			}
-		}
-		.pipe{
-			display: inline-block;
-			width: 100px;
-
-			@include transform-origin;		
-			@include breakpoint($device-xs-only){
-				@include scale(0.3);
-			}
-			@include breakpoint($device-md-only){
-				@include scale(0.62);
-			}
+		.pipe {
+			@include common-image('header-pipe', 176px, 85px, 369px, 177px, 591px, 284px);
 		}
 	}		
 	.info {
 		display: inline-block;
 		color: $theme-color;
-
-		@include transform-origin;
-		@include breakpoint($device-xs-only){
-			text-align: center;
-			width: 100%;
-		}
-		@include breakpoint($device-md-up){
-			width: 30%;
-		}
 		.year {
-			font-weight: 200;
-			font-size: 28px;
 		}
 		.topic {
-			@include breakpoint($device-xs-up){
-				@include scale(0.6);
-			}
-			@include breakpoint($device-md-only){
-				margin: 10px 0px 10px -120px;
-				@include scale(0.7);
-			}
-			@include breakpoint($device-xl-up){
-				margin: 10px 0px 10px -180px;
-			}
 		}
 		.topic-english {
-			font-weight: 200;
-			letter-spacing: 3px;
-			font-size: 32px;
 		}
 		.date {
-			font-weight: 200;
-			font-size: 32px;
 		}
 		.place {
-			font-size: 28px;
 		}
 	}
 	.sketch {
-		display: inline-block;
-		@include transform-origin;
-
 		@include breakpoint($device-xs-only){
-			padding: 20px;
-			img{
-				max-width: 100%;
-			}
+			margin: 50px auto 50px auto;
 		}
 		@include breakpoint($device-md-up){
-			vertical-align: 100px;
-			margin-top: -150px;
-			margin-left: 150px;
-			width: 200px;
-			height: 300px;
-			@include scale(0.56);
-
+			display: inline-block;
 		}
 		@include breakpoint($device-xl-up){
-			margin-left: 80px;
-			@include scale(1);
+			margin-top: -100px;
 		}
+
+		@include common-image('header-sketch', 267px, 261px, 298px, 291px, 533px, 546px);
 	}
 }
 
 .topic-sketch {
-	
 	@include breakpoint($device-xs-only){
-		width: 289px;
-		height: 186px;
 		margin: auto;
-		background: url('../images/mobile/topic-title.png');
 	}
-	@include breakpoint($device-md-only){
+	@inlcude breakpoint($device-md-up){
 		position: relative;
 		display: inline-block;
-		width: 142px;
-		height: 333px;
-		background: url('../images/tablet/topic-sketch.png');
 	}
-	@include breakpoint($device-xl-up){
-		position: relative;
-		display: inline-block;
-		width: 419px;
-		height: 556px;
-		background: url('../images/desktop/topic-sketch.png');
-	}
+	@include seperate-image('topic-sketch', 289px, 186px, 142px, 333px, 419px, 556px);
 }
 
 .topic{
 	@include adjust-padding;
-	@include breakpoint($device-md-only){
-		margin-top: -300px;
+	@include breakpoint($device-md-up){
+		margin-top: -500px;
 	}
-	@include breakpoint($device-xl-up){
-		margin-top: -300px;
-	}
+
 	.topic-english-1{
 		color: $theme-color;
 		font-size: 45px;
@@ -267,6 +239,10 @@ html,body{
 			background-color: $theme-color;
 			color: white;
 			padding: 10px;
+			@include breakpoint($device-xs-only){
+				margin: auto;
+				text-align: center;
+			}
 		}
 	}	
 
@@ -327,28 +303,7 @@ html,body{
 
 .projects {
 	.title{
-		margin: auto;
-		background-size: cover;
-
-		@include breakpoint($device-xs-only){
-			background: url('../images/mobile/project-title.png');
-			width: 279px;
-			height: 163px;
-			background-size: 279px 163px;
-		}
-		@include breakpoint($device-md-only){
-			background: url('../images/tablet/project-title.png');
-			width: 329px;
-			height: 154px;
-			background-size: 329px 154px;
-
-		}
-		@include breakpoint($device-xl-up){
-			background: url('../images/desktop/project-title.png');
-			width: 620px;
-			height: 315px;
-			background-size: 620px 315px;
-		}
+		@include seperate-image('project-title', 279px, 163px, 329px, 154px, 620px, 315px)
 	}
 	.list {
 		.preview {
@@ -358,30 +313,11 @@ html,body{
 
 .souvenir {
 	.title{
-		margin: auto;
-		@include breakpoint($device-xs-only){
-			background: url('../images/mobile/product-title.png');
-			width: 245px;
-			height: 34px;
-			background-size: 245px 34px;
-		}
-		@include breakpoint($device-md-only){
-			background: url('../images/tablet/product-title.png');
-			width: 327px;
-			height: 44px;
-			background-size: 327px 44px;
-		}
-		@include breakpoint($device-xl-up){
-			background: url('../images/desktop/product-title.png');
-			width: 523px;
-			height: 66px;
-			background-size: 523px 66px;
-		}
+		@include seperate-image('product-title', 245px, 34px, 327px, 44px, 523px, 66px);
 	}
 	.list{
 		.item{
 			.preview {
-
 			}
 			.product-intro {
 				line-height: 40px;
@@ -393,24 +329,8 @@ html,body{
 
 .support {
 	.title {
-		@include breakpoint($device-xs-only){
-			background: url('../images/mobile/support-title.png');
-			width: 164px;
-			height: 55px;
-			background-size: 164px 55px;
-		}
-		@include breakpoint($device-md-only){
-			background: url('../images/tablet/support-title.png');
-			width: 181px;
-			height: 68px;
-			background-size: 181px 68px;
-		}
-		@include breakpoint($device-xl-up){
-			background: url('../images/desktop/support-title.png');
-			width: 282px;
-			height: 109px;
-			background-size: 282px 109px;
-		}
+		@include seperate-image
+			('support-title', 164px, 55px, 181px, 68px, 282px, 109px);
 	}
 	.diamond {
 		background: url('../images/common/support-a.png');
@@ -424,7 +344,6 @@ html,body{
 		@include breakpoint($device-md-up){
 			@include scale(0.5);
 		}
-
 	}
 	.platinum {
 		background: url('../images/common/support-b.png');

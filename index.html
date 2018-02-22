@@ -15,47 +15,28 @@
 	<title>交通大學藝趣節 NCTU Art Festival</title>
 </head>
 <body>
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=2448538618705290&autoLogAppEvents=1';
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+
 	<!-- logo -->
 	<div class="main-logo">
 		<img src="assets/images/common/logo-100x100.png" >
 	</div>
 	<!-- logo end -->
 	<div class="container header">
-		<div class="components">
-			<!-- header light -->
-			<div class="light">
-				<img src="assets/images/common/header-light.png">
-			</div>
-			<!-- header light end -->
-			<!-- header pipe -->
-			<div class="pipe" style="vertical-align: top">
-				<img src="assets/images/common/header-pipe.png" >
-			</div>
-			<!-- header pipe end -->
+		<div class="components d-flex">
+			<div class="light"></div>
+			<div class="pipe"></div>
 		</div>
 		<!-- infomation -->
 		<div class="info">
 			<div class="year">2018</div>
-			<div class="topic">
-				<img src="assets/images/common/nctuartfest.png" >
-			</div>
+			<div class="topic"></div>
 			<div class="topic-english">
 				<span>Authentic Identity</span>
 			</div>
 			<div class="date">04/08 --- 05/13</div>
 			<div class="place">交通大學校園各處</div>
 		</div>
-		<div class="sketch">
-			<img src="assets/images/common/header-sketch.png">
-		</div>
+		<div class="sketch"></div>
 		<!-- infomation end -->
 	</div>
 	<!-- left side pipe -->
@@ -63,26 +44,18 @@
 		<div class="topic-sketch"></div>
 	</div>
 	<!-- left side pipe end -->
-	<div class="container topic">
+	<div class="container topic my-bottom-5">
 		<!-- widgets set 1 -->
 		<!-- some images may disappear/appear/change in different resolution -->
 		<div class="topic-widgets-1">
-			<div class="d-none d-md-block d-lg-none title">
-				<img src="assets/images/common/topic-title.png">
-			</div>
-			<div class="d-block d-md-none topic-english-1">
+			<div class="title d-none d-md-block d-lg-none"></div>
+			<div class="topic-english-1 d-block d-md-none">
 				"Authentic<br> Identity"
 			</div>
 			<div class="topic-widgets-1-1">
-				<div class="d-none d-md-inline-block d-lg-none products">
-					<img src="assets/images/common/topic-products.png">
-				</div>
-				<div class="robot">
-					<img src="assets/images/common/topic-robot.png">
-				</div>
-				<div class="d-inline-block d-md-none products">
-					<img src="assets/images/common/topic-products.png">
-				</div>
+				<div class="products d-none d-md-inline-block d-lg-none"></div>
+				<div class="robot"></div>
+				<div class="products d-inline-block d-md-none "></div>
 			</div>
 		</div>
 		<!-- widgets set 1 end -->
@@ -90,24 +63,23 @@
 		<div class="intro">
 			<span class="topic-english-2 d-none d-md-inline">"Authentic Identity"</span>
 			<p class="intro-content">崇尚科技發展，人工智慧技術不斷進步的時代，機器人與人類的差異也漸漸縮小，身為一個真實的人，什麼是我們存在於世界上無可取代、獨一無二的特質？身處於紛亂的、日新月異的時代，每一個人的真實身份又是什麼？</p>
-			<button class="medium-articles" onclick="window.location='#'">
+			<button class="medium-articles d-inline-block" onclick="window.location='#'">
 				Medium 系列文章
 			</button>
 		</div>
 		<!-- introduction end -->
 		<!-- widgets set 2 -->
 		<div class="d-none d-lg-inline-block topic-widgets-2" >
-			<div class="title">
-				<img class="img-fluid" src="assets/images/common/topic-title.png">
-			</div>
-			<div class="products">
-				<img src="assets/images/common/topic-products.png">
-			</div>
+			<div class="title"></div>
+			<div class="products"></div>
 		</div>
 		<!-- widgets set 2 end -->
 	</div>
 	<div class="container projects">
+		<!-- projects title -->
 		<div class="title mx-auto my-5"></div>
+		<!-- projects title end -->
+		<!-- projects list -->
 		<div class="list">
 			<div class="row m-5">
 				<div class="col-lg-5 col-xs-12 px-3>
@@ -175,9 +147,13 @@
 				</div>
 			</div>
 		</div>
+		<!-- projects list end -->
 	</div>
 	<div class="container souvenir">
+		<!-- souvenir title -->
 		<div class="title mx-auto my-5"></div>
+		<!-- souvenir title end -->
+		<!-- souvenir list -->
 		<div class="lists">
 			<div class="row">
 				<div class="item col-md-4 col-xs-12">
@@ -198,6 +174,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- souvenir list end -->
 	</div>
 	<div class="container support">
 		<div class="title mx-auto my-5"></div>
@@ -206,9 +183,12 @@
 		<div class="gold"></div>
 	</div>
 	<footer>
+		<!-- footer sketch top -->
 		<div class="d-xs-block d-md-none">
 			<img src="assets/images/mobile/footer-sketch-top.png" width="100%">
 		</div>
+		<!-- footer sketch top end -->
+		<!-- footer sketch, lg only -->
 		<div class="sketch mx-auto my-5">
 			<div class="d-flex flex-column justify-content-center py-5">
 				<p>交大藝趣節 - Authentic Identity</p>
@@ -237,6 +217,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- footer sketch end -->
 	</footer>
 </body>
 </html>
