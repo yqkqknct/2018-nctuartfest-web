@@ -9,7 +9,7 @@ $device-xs-up: 320px;
 $device-xs-only: 320px 768px;
 $device-md-up: 768px;
 $device-md-only: 768px 1200px;
-$device-lg-up: 1200px;
+$device-xl-up: 1200px;
 
 @mixin scale($factor){
 	-webkit-transform: scale($factor);
@@ -28,9 +28,8 @@ $device-lg-up: 1200px;
 }
 
 @mixin adjust-padding {
-	@include breakpoint($device-lg-up){ padding-left: 150px; }
+	@include breakpoint($device-xl-up){ padding-left: 150px; }
 	@include breakpoint($device-md-only){ padding-left: 100px; }
-
 }
 
 // adjustment
@@ -66,7 +65,7 @@ html,body{
 .header {
 	@include adjust-padding;
 	@include breakpoint($device-md-only){ margin-bottom: 50px;}
-	@include breakpoint($device-lg-up){	height: 100vh; }
+	@include breakpoint($device-xl-up){	height: 100vh; }
 	.components{
 		@include breakpoint($device-xs-only){
 			height: 50px;
@@ -75,13 +74,12 @@ html,body{
 			margin-left: 180px;
 			height: 200px;
 		}
-		@include breakpoint($device-lg-up){
+		@include breakpoint($device-xl-up){
 			height: 320px;
 		}
 
 		.light{
 			display: inline-block;
-
 			@include breakpoint($device-xs-only){
 				width: 50px;
 				@include transform-origin;	
@@ -90,7 +88,7 @@ html,body{
 			@include breakpoint($device-md-only){
 				display: none;
 			}
-			@include breakpoint($device-lg-up){
+			@include breakpoint($device-xl-up){
 				width: 150px;
 			}
 		}
@@ -131,7 +129,7 @@ html,body{
 				margin: 10px 0px 10px -120px;
 				@include scale(0.7);
 			}
-			@include breakpoint($device-lg-up){
+			@include breakpoint($device-xl-up){
 				margin: 10px 0px 10px -180px;
 			}
 		}
@@ -167,7 +165,7 @@ html,body{
 			@include scale(0.56);
 
 		}
-		@include breakpoint($device-lg-up){
+		@include breakpoint($device-xl-up){
 			margin-left: 80px;
 			@include scale(1);
 		}
@@ -189,7 +187,7 @@ html,body{
 		height: 333px;
 		background: url('../images/tablet/topic-sketch.png');
 	}
-	@include breakpoint($device-lg-up){
+	@include breakpoint($device-xl-up){
 		position: relative;
 		display: inline-block;
 		width: 419px;
@@ -203,7 +201,7 @@ html,body{
 	@include breakpoint($device-md-only){
 		margin-top: -300px;
 	}
-	@include breakpoint($device-lg-up){
+	@include breakpoint($device-xl-up){
 		margin-top: -300px;
 	}
 	.topic-english-1{
@@ -227,7 +225,7 @@ html,body{
 			margin-left: -20px;
 			@include scale(0.69);
 		}
-		@include breakpoint($device-lg-up){
+		@include breakpoint($device-xl-up){
 			width: 110px;
 			height: 307px;
 		}
@@ -243,7 +241,7 @@ html,body{
 			padding: 0px 50px 0px 50px;
 			vertical-align: 70px;
 		}
-		@include breakpoint($device-lg-up){ 
+		@include breakpoint($device-xl-up){ 
 			display: inline-block;
 			width: 40%; 
 			padding: 0px 30px 0px 30px;
@@ -274,12 +272,11 @@ html,body{
 
 	.title {
 		@include breakpoint($device-md-only){
-			display: none;
 			width: 137px;
 			margin-left: 60px;
 			@include scale(0.68);
 		}
-		@include breakpoint($device-lg-up){
+		@include breakpoint($device-xl-up){
 			width: 202px;
 			margin: auto;
 		}
@@ -292,41 +289,182 @@ html,body{
 			@include transform-origin;
 		}
 		@include breakpoint($device-md-only){
-			vertical-align: 50px;
+			vertical-align: 100px;
 			width: 186px;
 			@include scale(0.6);
-			@include transform-origin;
 		}
-		@include breakpoint($device-lg-up){
+		@include breakpoint($device-xl-up){
 			width: 304px;
 			margin: auto;
 		}
 	}
-	// for widgets that only display on lg devices
 	.topic-widgets-1 {
-		@include breakpoint($device-md-only){
+		@include breakpoint($device-md-up){
 			display: inline-block;
 			vertical-align: 80px;
 		}
-		@include breakpoint($device-lg-up){
-			display: inline-block;
-			vertical-align: 80px;
+		@include breakpoint($device-xl-up){
 			width: 20%;
 		}
 	}
-	.topic-widgets-2 {
+	.topic-widgets-1-1 {
 		@include breakpoint($device-xs-only){
 			width: 350px;
 			margin: auto;
 		}
 	}
-	.topic-widgets-3 {
-		display: inline-block;
-		vertical-align: 80px;
-		width: 20%;
+	.topic-widgets-2 {
+		@include breakpoint($device-md-only){
+			vertical-align: 120px;
+			width: 30%;
+		}
+		@include breakpoint($device-xl-up){
+			vertical-align: 80px;
+			width: 30%;
+		}
 	}
 }
 
+.projects {
+	.title{
+		margin: auto;
+		background-size: cover;
 
+		@include breakpoint($device-xs-only){
+			background: url('../images/mobile/project-title.png');
+			width: 279px;
+			height: 163px;
+			background-size: 279px 163px;
+		}
+		@include breakpoint($device-md-only){
+			background: url('../images/tablet/project-title.png');
+			width: 329px;
+			height: 154px;
+			background-size: 329px 154px;
 
+		}
+		@include breakpoint($device-xl-up){
+			background: url('../images/desktop/project-title.png');
+			width: 620px;
+			height: 315px;
+			background-size: 620px 315px;
+		}
+	}
+	.list {
+		.preview {
+		}
+	}
+}
 
+.souvenir {
+	.title{
+		margin: auto;
+		@include breakpoint($device-xs-only){
+			background: url('../images/mobile/product-title.png');
+			width: 245px;
+			height: 34px;
+			background-size: 245px 34px;
+		}
+		@include breakpoint($device-md-only){
+			background: url('../images/tablet/product-title.png');
+			width: 327px;
+			height: 44px;
+			background-size: 327px 44px;
+		}
+		@include breakpoint($device-xl-up){
+			background: url('../images/desktop/product-title.png');
+			width: 523px;
+			height: 66px;
+			background-size: 523px 66px;
+		}
+	}
+	.list{
+		.item{
+			.preview {
+
+			}
+			.product-intro {
+				line-height: 40px;
+				vertical-laign: center;
+			}
+		}		
+	}
+}
+
+.support {
+	.title {
+		@include breakpoint($device-xs-only){
+			background: url('../images/mobile/support-title.png');
+			width: 164px;
+			height: 55px;
+			background-size: 164px 55px;
+		}
+		@include breakpoint($device-md-only){
+			background: url('../images/tablet/support-title.png');
+			width: 181px;
+			height: 68px;
+			background-size: 181px 68px;
+		}
+		@include breakpoint($device-xl-up){
+			background: url('../images/desktop/support-title.png');
+			width: 282px;
+			height: 109px;
+			background-size: 282px 109px;
+		}
+	}
+	.diamond {
+		background: url('../images/common/support-a.png');
+		background-size: cover;
+		width: 336px;
+		height: 50px;
+		@include transform-origin;
+		@include breakpoint($device-xs-only){
+			@include scale(0.4);
+		}
+		@include breakpoint($device-md-up){
+			@include scale(0.5);
+		}
+
+	}
+	.platinum {
+		background: url('../images/common/support-b.png');
+		background-size: cover;
+		width: 336px;
+		height: 50px;
+		@include transform-origin;
+		@include breakpoint($device-xs-only){
+			@include scale(0.4);
+		}
+		@include breakpoint($device-md-up){
+			@include scale(0.5);
+		}
+	}
+	.gold {
+		background: url('../images/common/support-c.png');
+		background-size: cover;
+		width: 274px;
+		height: 50px;
+		@include transform-origin;
+		@include breakpoint($device-xs-only){
+			@include scale(0.4);
+		}
+		@include breakpoint($device-md-up){
+			@include scale(0.5);
+		}
+	}
+}
+
+footer {
+	.sketch{
+		text-align: center;
+		@include breakpoint($device-md-up){
+			background: url('../images/common/footer-sketch.png');
+			background-size: 694px 301px;
+			width: 694px;
+			height: 301px;
+		}
+	}
+	.fb-fan-page{
+		margin-top: 50px;
+	}
+}
