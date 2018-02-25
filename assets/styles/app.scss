@@ -508,7 +508,7 @@ html, body{
 .souvenir {
 	.title{
 		margin-top: 70px;
-			margin-bottom: 70px;
+		margin-bottom: 40px;
 		@include breakpoint($device-md-up) {
 			margin-top: 70px;
 			margin-bottom: 70px;
