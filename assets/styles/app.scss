@@ -535,6 +535,9 @@ html, body{
 	.title {
 		@include seperate-image('support-title', 164px, 55px, 181px, 68px, 282px, 109px);
 	}
+	.slogo {
+		margin-right: 20px;
+	}
 	.diamond {
 		background: url('../images/common/support-a.png');
 		background-size: cover;
@@ -577,6 +580,7 @@ html, body{
 }
 
 footer {
+	margin-top: 70px;
 	margin-bottom: 60px;
 	.sketch{
 		text-align: center;
@@ -628,9 +632,13 @@ footer {
 		    line-height: 20px;
 		    margin-top: 5px;
 		}
+		p {
+			transform: rotate(-1deg);
+		}
 	}
-	p {
-		transform: rotate(-1deg);
+	
+	.organizer {
+		margin-top: 50px;
 	}
 	.footer-ai {
 		font-family: $font-ai;
