@@ -137,6 +137,14 @@ html, body{
 	}
 }
 
+a {
+	color: $orange-color;
+	&:hover {
+		color: lighten($orange-color, 10);
+		text-decoration: none;
+	}
+}
+
 .header {
 	position: relative;
 	height: 600px;
