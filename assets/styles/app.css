@@ -455,6 +455,8 @@ footer {
   #go .goods-info .goods-name {
     color: #0A2C42;
     font-size: 0.875rem; }
+  #go .goods-info .goods-preorder {
+    color: red; }
 #go .preorder {
   padding: 1.5rem 0;
   text-align: center; }
