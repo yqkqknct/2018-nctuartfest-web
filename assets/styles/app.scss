@@ -636,9 +636,15 @@ footer {
 		color: $color-blue-dark;
 	    font-size: 1.25rem;
 	    letter-spacing: 2px;
-	    margin-bottom: 2rem;
-	    margin-top: -28px;
-	    margin-left: 100px;
+	    margin: 0;
+	    display: block;
+	    text-align: center;
+	    @include breakpoint($md) {
+	    	display: inline;
+	    	margin-bottom: 2rem;
+		    margin-top: -28px;
+		    margin-left: 100px;
+	    }
 	}
 
 	.go-title {
@@ -646,18 +652,31 @@ footer {
 		margin-bottom: 0;
 	    width: 280px;
 	    margin-left: -2px;
+	    text-align: center;
+	    margin: 0 auto;
+	    @include breakpoint($md) {
+	    	text-align: left;
+	    	margin: 0 0 0 -2px;
+	    }
 	}
 
 	.hashtags {
 		font-size: 0.75rem;
+		margin-bottom: 2rem;
 		letter-spacing: 4px;
 		color: $color-brown;
+
 	}
 
 	.slogan {
-		    margin-top: 1.5rem;
-		margin-bottom: 1rem;
 		letter-spacing: 2px;
+		text-align: center;
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+	    @include breakpoint($md) {
+	    	text-align: left;
+	    	margin: 1.5rem 0 1rem 0;
+	    }
 	}
 
 	.space {
@@ -718,6 +737,10 @@ footer {
 		line-height: 1.2;
 		letter-spacing: 2px;
 		color: $color-brown;
+		margin-top: 1.5rem;
+		@include breakpoint($md) {
+			margin-top: 0;
+		}
 	}
 
 	.description {
@@ -774,7 +797,7 @@ footer {
 	}
 
 	.bar-bear-steps {
-		margin-top: 1.5rem;
+		margin-top: .5rem;
 		color: $color-blue-dark;
 	}
 
