@@ -1,5 +1,20 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
+.red {
+  color: #C23235; }
+
+.brown {
+  color: #AA967D; }
+
+.green {
+  color: #7FA0A6; }
+
+.orange {
+  color: #E37224; }
+
+.blue-dark {
+  color: #0A2C42; }
+
 .clearfix::before,
 .clearfix::after {
   flex-basis: 0;
@@ -15,14 +30,13 @@ html, body {
   padding: 0px;
   overflow-x: hidden;
   background-color: #F3F3F4;
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Noto Sans TC", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.7;
   letter-spacing: 1.33; }
-  @media (min-width: 320px) {
+  @media (min-width: 576px) {
     html, body {
-      font-weight: 400;
       font-size: 16px; } }
 
 img {
@@ -30,74 +44,101 @@ img {
 
 header.fixed-nav {
   position: relative;
-  padding: 2rem 0;
-  text-align: center; }
+  width: 100%; }
   header.fixed-nav nav {
-    text-align: center; }
+    text-align: center;
+    padding: 1.5rem; }
+    header.fixed-nav nav .navbar-brand {
+      margin-right: 1.75rem;
+      margin-left: 1rem; }
     header.fixed-nav nav .nav-item {
+      position: relative;
       display: inline-block;
-      padding: 0 2.5rem; }
+      padding: 0 1.25rem; }
       header.fixed-nav nav .nav-item a {
         font-size: 14px;
         color: #0C273A;
         text-decoration: none; }
         header.fixed-nav nav .nav-item a:hover {
           color: #E37224; }
+      header.fixed-nav nav .nav-item.active a {
+        color: #E37224; }
+    header.fixed-nav nav .nav-link {
+      display: inline; }
+    header.fixed-nav nav .nav-item-new {
+      position: absolute;
+      top: -.75rem;
+      color: red;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-left: -0.75rem; }
 
 #topic {
-  margin-top: 4rem;
+  margin-top: 1rem;
   position: relative; }
-  #topic .topic-content .date {
-    font-family: "Poiret One", cursive;
-    font-size: 16px;
-    letter-spacing: 0.8px;
-    line-height: 18px; }
-    @media (min-width: 1440px) {
-      #topic .topic-content .date {
-        font-size: 16px;
-        letter-spacing: 1.33px; } }
-  #topic .topic-content .date-line {
-    display: inline-block;
-    border-bottom: 1px solid #0C273A;
-    height: 1px;
-    width: 30px;
-    margin: 8px 5px; }
+  @media (min-width: 768px) {
+    #topic {
+      margin-top: 0rem;
+      background: #eee;
+      padding: 3rem 0; } }
+  #topic .topic-content {
+    text-align: center;
+    margin-bottom: 2rem; }
     @media (min-width: 768px) {
-      #topic .topic-content .date-line {
-        width: 40px; } }
-    @media (min-width: 1440px) {
-      #topic .topic-content .date-line {
-        width: 49px; } }
-  #topic .topic-content .place {
-    display: block;
-    font-weight: 300;
-    font-family: "Noto Sans TC", sans-serif;
-    font-size: 16px;
-    letter-spacing: 5px;
-    line-height: 24px; }
-    @media (min-width: 1440px) {
-      #topic .topic-content .place {
-        font-size: 16px;
-        letter-spacing: 7.5px; } }
-  #topic .topic-content .year {
-    font-family: "Poiret One", cursive;
-    font-size: 1.25rem;
-    margin-bottom: 1rem; }
-  #topic .topic-content .topic-tag {
-    margin-top: 3rem;
-    color: #AA967D; }
-  #topic .topic-content .topic {
-    width: 233px;
-    height: auto; }
-  #topic .topic-content .topic-english {
-    font-family: "Poiret One", cursive;
-    font-size: 1.5rem;
-    margin-top: .75rem;
-    margin-bottom: 3rem;
-    line-height: 21px;
-    letter-spacing: 1.5px; }
-  #topic .topic-content .topic-slogan {
-    margin: 0 auto; }
+      #topic .topic-content {
+        text-align: left;
+        margin-bottom: 0; } }
+    #topic .topic-content .date {
+      font-family: "Poiret One", cursive;
+      font-size: 16px;
+      letter-spacing: 0.8px;
+      line-height: 18px; }
+      @media (min-width: 1440px) {
+        #topic .topic-content .date {
+          font-size: 16px;
+          letter-spacing: 1.33px; } }
+    #topic .topic-content .date-line {
+      display: inline-block;
+      border-bottom: 1px solid #0C273A;
+      height: 1px;
+      width: 30px;
+      margin: 8px 5px; }
+      @media (min-width: 768px) {
+        #topic .topic-content .date-line {
+          width: 40px; } }
+      @media (min-width: 1440px) {
+        #topic .topic-content .date-line {
+          width: 49px; } }
+    #topic .topic-content .place {
+      display: block;
+      font-weight: 300;
+      font-family: "Noto Sans TC", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      letter-spacing: 5px;
+      line-height: 24px; }
+      @media (min-width: 1440px) {
+        #topic .topic-content .place {
+          font-size: 16px;
+          letter-spacing: 7.5px; } }
+    #topic .topic-content .year {
+      font-family: "Poiret One", cursive;
+      font-size: 1.25rem;
+      margin-bottom: 1rem; }
+    #topic .topic-content .topic-tag {
+      margin-top: 3rem;
+      color: #AA967D; }
+    #topic .topic-content .topic {
+      width: 233px;
+      height: auto; }
+    #topic .topic-content .topic-english {
+      font-family: "Poiret One", cursive;
+      font-size: 1.5rem;
+      margin-top: .75rem;
+      margin-bottom: 3rem;
+      line-height: 21px;
+      letter-spacing: 1.5px; }
+    #topic .topic-content .topic-slogan {
+      margin: 0 auto; }
   #topic .components .h-gear {
     position: absolute;
     left: 5vh;
@@ -145,7 +186,10 @@ header.fixed-nav {
     object-fit: cover; }
 
 #intro {
-  margin-top: 5rem; }
+  margin-top: 1rem; }
+  @media (min-width: 576px) {
+    #intro {
+      margin-top: 5rem; } }
   #intro .intro-img {
     margin: 4rem 0; }
   #intro .intro-title {
@@ -158,10 +202,14 @@ header.fixed-nav {
       margin-bottom: 1.5rem; }
 
 #projects {
-  margin-top: 5rem; }
+  margin-top: 1rem; }
   #projects .block-title {
+    line-height: 1.7;
     margin-top: 1rem;
     margin-bottom: 2rem; }
+  @media (min-width: 576px) {
+    #projects {
+      margin-top: 4rem; } }
   #projects .project-title {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -184,6 +232,13 @@ footer {
   margin-top: 5rem;
   margin-bottom: 3rem;
   color: #313D42; }
+  footer .media {
+    display: block; }
+    footer .media .facebook {
+      text-align: center; }
+    @media (min-width: 768px) {
+      footer .media {
+        display: flex; } }
   footer .copyright {
     margin-top: 2rem;
     text-align: center;
@@ -200,8 +255,12 @@ footer {
     display: inline-block;
     margin: 15px 20px 15px 0; }
   footer .organizer {
-    margin: 0;
-    padding: 0; }
+    padding: 0;
+    margin: 3rem 0 0 0; }
+    @media (min-width: 768px) {
+      footer .organizer {
+        margin: 0;
+        padding: 0; } }
     footer .organizer li {
       margin: 0;
       padding: 0;
@@ -235,61 +294,78 @@ footer {
 #go .date {
   font-family: "Poiret One", cursive;
   color: #0A2C42;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   letter-spacing: 2px;
-  margin-bottom: .5rem; }
+  margin-bottom: 2rem;
+  margin-top: -28px;
+  margin-left: 100px; }
 #go .go-title {
   color: #E37224;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 0;
+  width: 280px;
+  margin-left: -2px; }
 #go .hashtags {
   font-size: 0.75rem;
   letter-spacing: 4px;
   color: #AA967D; }
 #go .slogan {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
   letter-spacing: 2px; }
 #go .space {
+  padding: 1rem 0; }
+#go .topspace {
   padding: 1rem 0;
-  margin: .5rem 0 .5rem 0; }
+  margin-top: 2rem; }
 #go .img-note {
   font-size: 0.75rem;
   color: #AA967D;
   letter-spacing: 2px; }
 #go #go-movie-forum .block-title {
-  margin-top: .5rem; }
-#go #go-movie-forum .forum-context {
-  font-size: 0.9rem; }
+  margin-top: 0rem; }
 #go .block-title {
   font-size: 1.5rem;
-  margin: 1rem 0 0.5rem 0; }
+  line-height: 2rem;
+  margin: .5rem 0 0.5rem 0; }
   #go .block-title.green {
     color: #7FA0A6; }
 #go .sub-title {
   font-size: 0.9rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  margin-top: 0rem; }
   #go .sub-title.green {
     color: #7FA0A6; }
 #go .item-title {
   font-size: 1rem;
   margin-top: .5rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  color: #313D42;
+  border-bottom: 1px solid #313D42; }
 #go .sub-description {
   font-size: 0.825rem;
   line-height: 1.2;
   letter-spacing: 2px;
   color: #AA967D; }
+#go .description {
+  margin-bottom: 2rem; }
 #go .info-name {
   font-size: 0.875rem;
   color: #0A2C42;
   letter-spacing: 3px;
-  margin: 1rem 0; }
+  margin: 1rem 0 .5rem 0; }
+  #go .info-name a {
+    color: #0A2C42; }
+    #go .info-name a:hover {
+      color: #114a6e;
+      text-decoration: none; }
   #go .info-name.brown {
     color: #AA967D; }
   #go .info-name.green {
     color: #7FA0A6; }
-#go #go-realpart-title {
-  margin-top: .5rem; }
+#go #go-realpart-title .block-title {
+  margin-top: 0rem; }
+#go .band {
+  margin-bottom: 2rem; }
 #go #go-realpart-info .info {
   margin-bottom: 1.5rem; }
 #go #bar-bear-campaign {
@@ -308,13 +384,14 @@ footer {
   height: auto; }
 #go #live-movie {
   position: relative;
-  height: 400px; }
+  height: 400px;
+  padding: 0; }
   #go #live-movie .movie-bg {
     position: absolute;
     left: 0;
     top: 0;
     z-index: 5;
-    background: url("../images/live-4.png");
+    object-fit: cover;
     width: 100%;
     height: 400px; }
   #go #live-movie .movie-inner {
@@ -330,10 +407,20 @@ footer {
     padding: 3rem 2rem;
     right: 0;
     top: 0;
-    width: 550px;
+    display: none;
     text-align: right; }
+    @media (min-width: 992px) {
+      #go #live-movie .sub-description {
+        display: block;
+        width: 400px; } }
+    @media (min-width: 1200px) {
+      #go #live-movie .sub-description {
+        display: block;
+        width: 550px; } }
 #go #go-movie .info {
   font-size: 0.9rem; }
+#go #go-movie .movie-single {
+  margin-bottom: 1.5rem; }
 #go #go-goods .block-title {
   margin-top: 1rem;
   margin-bottom: 2rem; }
@@ -347,9 +434,14 @@ footer {
     color: #0A2C42;
     font-size: 0.875rem; }
 #go .preorder {
-  margin: 1.5rem 0; }
+  padding: 1.5rem 0;
+  text-align: center; }
+  @media (min-width: 992px) {
+    #go .preorder {
+      text-align: left; } }
   #go .preorder .preorder-button {
-    float: left;
+    display: inline-block;
+    float: none;
     background: #DC7376;
     padding: .5rem 1.25rem;
     font-weight: 700;
@@ -357,13 +449,54 @@ footer {
     border-radius: .25rem;
     color: #F3F3F4;
     transition: 0.07s; }
+    @media (min-width: 992px) {
+      #go .preorder .preorder-button {
+        display: block;
+        float: left; } }
     #go .preorder .preorder-button:hover {
       background: #e69c9e;
       text-decoration: none; }
+    #go .preorder .preorder-button.orange {
+      background: #E37224; }
+      #go .preorder .preorder-button.orange:hover {
+        background: #e98f51;
+        text-decoration: none; }
   #go .preorder .preorder-info {
-    margin-left: 1.5rem;
-    line-height: 1.4rem;
-    float: left; }
+    margin-left: 0;
+    margin-top: 1.5rem;
+    float: none;
+    line-height: 1.7; }
+    @media (min-width: 992px) {
+      #go .preorder .preorder-info {
+        float: left;
+        margin-top: 0;
+        margin-left: 1.5rem; } }
+    @media (min-width: 768px) {
+      #go .preorder .preorder-info {
+        line-height: 1.4rem; } }
+#go #go-eats {
+  margin: 1rem -15px;
+  padding: 2rem 1rem;
+  border-radius: .25rem;
+  background: rgba(227, 114, 36, 0.05);
+  text-align: center; }
+  @media (min-width: 576px) {
+    #go #go-eats {
+      margin: 3rem 0;
+      padding: 2rem 2rem; } }
+  @media (min-width: 992px) {
+    #go #go-eats {
+      margin: 3rem 0;
+      padding: 4rem 2rem; } }
+  @media (min-width: 992px) {
+    #go #go-eats {
+      text-align: left; } }
+  #go #go-eats .promote-title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.75rem; }
+  #go #go-eats .eats-image {
+    margin-bottom: 1.5rem; }
 #go .place {
   display: inline-block;
   color: #E37224; }
@@ -373,5 +506,22 @@ footer {
     margin-bottom: 1rem; }
   #go .place i {
     margin-right: 0.25rem; }
+#go .intro-img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px; }
+  @media (min-width: 1200px) {
+    #go .intro-img {
+      height: 300px; } }
+#go .nightmarket-img {
+  object-fit: cover;
+  width: 100%;
+  height: 250px; }
+
+#artpassport {
+  margin-top: 4rem; }
+  #artpassport .block-title {
+    margin-top: .5rem;
+    margin-bottom: 1.5rem; }
 
 /*# sourceMappingURL=app.css.map */

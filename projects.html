@@ -32,39 +32,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<!-- fixed header -->
 	<header class="fixed-nav">
-		<nav>
-			<li class="nav-item"><a href="go.html">藝趣生活週</a></li>
-			<li class="nav-item"><a href="projects.html">六大專案</a></li>
-			<li class="nav-item">
-				<!-- logo -->
-				<a href="index.html"><img src="assets/images/logo.png" width="50" height="50"></a>
-				<!-- logo end -->
-			</li>
-			<li class="nav-item"><a href="stories.html">主線故事</a></li>
-			<li class="nav-item"><a href="stamp.html">藝文護照集章</a></li>
-		</nav>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg nav-padding">
+				<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" width="50" height="50"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link" href="go.html">藝趣生活週</a><small class="nav-item-new">NEW</small></li>
+						<li class="nav-item"><a class="nav-link" href="projects.html">六大專案</a></li>
+						<li class="nav-item"><a class="nav-link" href="stories.html">主線故事</a></li>
+						<li class="nav-item"><a class="nav-link" href="stamp.html">藝文護照集章</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 	</header>
 
 	<!-- end fixed header -->
 
 
+	
 	<section class="container" id="projects">
-		<div class="col-12 text-center">
-			<h2 class="block-title">所有專案</h2>
-		</div>
+		<!-- projects list -->
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-sm-12 col-md-6 col-lg-4">
 				<a href="realpart.html"><img class="preview" src="assets/images/野台.png" width="100%"></a>
 				<h2 class="project-title"><a href="realpart.html">《Real Part》－ 音樂野台</a></h2>
+				<div class="project-description">
+					<p>複數包含 Real Part 以及 Imaginary Part ，分別詮釋為人內心最深層的實部，以及為了符合社會期待所展現的虛部。藉由這個舞台、藉由表演者的故事敘述，讓每個演出背後的故事最真實的呈現。 </p>
+
+					<p>邀請校內外團體演出，以最直接、最平易近人卻最動人的方式為交大人帶來音樂饗宴，盡情享受、感受作品中、個人心中的衝突，欣賞創作。</p>
+				</div>
 				<div class="project-info">
 					音樂野台：4/29 13:00 - 17:30<br>
 					文創市集：4/29 12:00 - 20:00、4/30 5/1 11:00 - 18:00
 					<span class="place block"><i class="fas fa-map-marker"></i> 浩然圖書館前廣場</span>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-sm-12 col-md-6 col-lg-4">
 				<a href="human.html"><img class="preview" src="assets/images/人.jpg" width="100%"></a>
 				<h2 class="project-title"><a href="human.html">「人?」– 影展</a></h2>
+				<div class="project-description">
+					<p>我們想要藉著舉辦一個影展，營造一個適合思考的觀影環境，讓與會者觀賞某些特別挑選的電影，使大家去思考人的本質，或許能多少改變自己思考，也改變自己看待人事物的方式。</p>
+					<p>有時影像的刺激勝過語言，或許那些對詩和文字沒有特別感覺的人，能在我們精心準備的影展中得到一些收穫。</p>
+				</div>
 				<div class="project-info">
 					露天電影院：4/29 18:00 - 23:00
 					<span class="place block"><i class="fas fa-map-marker"></i> 浩然圖書館前廣場</span>
@@ -77,56 +90,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="clearfix d-block d-sm-none"></div>
+			<div class="col-sm-12 col-md-6 col-lg-4">
 				<a href="paper.html"><img class="preview" src="assets/images/publication.jpg" width="100%"></a>
 				<h2 class="project-title"><a href="publication.html">《非人報》- 藝趣節刊物</a></h2>
+				<div class="project-description">
+					<p>文字是雋永的語言，藉由文字寫下與交大人有關、與新竹有關的故事。身而為人，交大人，我們是否與眾不同？</p>
+					<p>在這以科技領域著稱的校園裡，“人”存在的價值是否因此而貶或升值？</p>
+				</div>
 				<div class="project-info">
 					發行第一期：4/8，第二期：4/29
-					<span class="place block"><i class="fas fa-map-marker"></i> 索取地點：二餐多多、小七前、華通書局、交大應藝所、一餐萊爾富、小木屋、奶油廚房、女二全家前、藝文空間、米諾瓦、LALA、清大水木書苑、蘇格貓底二手咖啡屋、江山藝改所、柒拾壹、開門工作室</span>
+					<span class="place block"><i class="fas fa-map-marker"></i> 索取地點：二餐多多、小七前、華通書局、交大應藝所、一餐萊爾富、小木屋、奶油廚房、女二全家前、藝文空間、米諾瓦、LALA、清大水木書苑、蘇格貓底二手咖啡屋、江山藝改所、柒拾壹、開門工作室</span><br>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4">
+			<div class="clearfix d-none d-md-block"></div>
+			<div class="col-sm-12 col-md-6 col-lg-4">
 				<a href="being.html"><img class="preview" src="assets/images/being.jpg" width="100%"></a>
 				<h2 class="project-title"><a href="being.html">《Being》– 裝置藝術</a></h2>
+				<div class="project-description">
+					<p>Being以樹的形態出現，卻又獨樹一幟，對比周遭的樹，呈現強烈的外觀及形體變化。一系列的轉變彷彿掙扎，而找尋自我的意志就如佇立的枝幹般堅定。</p>
+	
+					<p>希望觀賞者藉由視覺觸及心靈感受，獲得啟發，思考真實的自我，尋找、確立芸芸眾生中自我獨特、無可取代的價值。</p>
+				</div>
 				<div class="project-info">
 					展出日期：4/8 ~ 5/13
 					<span class="place block"><i class="fas fa-map-marker"></i> 浩然圖書館後草皮</span>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="clearfix d-block d-sm-none"></div>
+			<div class="col-sm-12 col-md-6 col-lg-4">
 				<a href="minstrels-tears.html"><img class="preview" src="assets/images/minstrels_tears.jpg" width="100%"></a>
 				<h2 class="project-title"><a href="minstrels-tears.html">《人造雨》 － 詩淚計畫</a></h2>
+				<div class="project-description">
+					<p>詩一直是乘載人類情緒的介質，當你哭不出來的時候，請讓詩來替你流淚。</p>
+					<p>人透過情感可以找回真實自我，而詩可以反映出我們的情緒，所以我們希望能透過詩使大家體察真實的自己所擁有情緒。</p>
+				</div>
 				<div class="project-info">
 					展出日期：4/8 ~ 5/13
 					<span class="place block"><i class="fas fa-map-marker"></i> 浩然圖書館 B1 入口</span>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-sm-12 col-md-6 col-lg-4">
 				<a href="minstrels-tears.html"><img class="preview" src="assets/images/emergence.jpg" width="100%"></a>
 				<h2 class="project-title"><a href="emergence.html">《Emergence》 － 裝置藝術</a></h2>
+				<div class="project-description">
+					<p>以水面類比於人的群體，以泡沫類比於個人的身份，而「水面」、「泡沫」和「陸地」的三個空間層次，對應到人的三個狀態。</p>
+					<p>人由被動轉向主動，逐漸擁有自己的意識、省思自我的存在價值。 泡沫中存在抽象的人形，彷彿是孕育生命的卵。這是建構身分的過度階段，呈現生命意識的覺醒。最後，從卵中掙脫、離開水面而登上陸地的人形，象徵了找回真實自我、獲得解放的個人。</p>
+				</div>
 				<div class="project-info">
 					展出日期：4/8 ~ 5/13
 					<span class="place block"><i class="fas fa-map-marker"></i> 交通大學竹湖</span>
 				</div>
 			</div>
 		</div>
-
-		
 		<!-- projects list end -->
 	</section>
 
 
+
+
 	<footer>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-4 fb-fan-page">
-					<div class="d-flex justify-content-center">
-						<iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/NCTUArtFest/&tabs=timeline&width=280&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2448538618705290" style="width:260px;height:300px;border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-					</div>
+			<div class="media">
+				<div class="mr-5 facebook">
+					<iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/NCTUArtFest/&tabs=timeline&width=280&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2448538618705290" style="width:280px;height:300px;border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 				</div>
-				<div class="col-md-8 align-items-center">
+  				<div class="media-body">
 					<ul class="organizer">
 						<li class="organizer-main">主辦單位｜2018 交大藝趣節團隊</li>
 						<li class="organizer-support">
@@ -161,6 +190,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 	</footer>
-
-	</body>
+</body>
 </html>

@@ -1,7 +1,7 @@
 
 // breakpoint sass
 @import '../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 $bg-color: #F3F3F4;
@@ -13,6 +13,13 @@ $color-blue-dark: #0A2C42;
 $color-blue-medium: #313D42;
 $color-green: #7FA0A6;
 $color-pink: #DC7376;
+$color-red: #C23235;
+
+.red { color: $color-red; }
+.brown { color: $color-brown; }
+.green { color: $color-green; }
+.orange { color: $color-orange; }
+.blue-dark { color: $color-blue-dark; }
 
 $device-xs-up: 320px;
 $device-xs-only: 320px 767px;
@@ -20,8 +27,13 @@ $device-md-up: 768px;
 $device-md-only: 768px 1439px;
 $device-xl-up: 1440px;
 
+$xs: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
 $font-ai: 'Poiret One', cursive;
-$font-noto: 'Noto Sans TC', sans-serif;
+$font-noto: 'Noto Sans TC', Helvetica, Arial, sans-serif;
 $font-mix: 'Poiret One', cursive, 'Noto Sans TC', sans-serif;
 $font-context:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
@@ -114,8 +126,7 @@ html, body{
 	font-family: $font-noto;
 	font-weight: 400;
 	font-size: 15px;
-	@include breakpoint($device-xs-up) {
-		font-weight: 400;
+	@include breakpoint($xs) {
 		font-size: 16px;
 	}
 	line-height: 1.7;
@@ -163,13 +174,18 @@ img {
 
 header.fixed-nav {
 	position: relative;
-	padding: 2rem 0;
-	text-align: center;
+    width: 100%;
 	nav {
 		text-align: center;
+    	padding: 1.5rem;
+    	.navbar-brand {
+		    margin-right: 1.75rem;
+		    margin-left: 1rem;
+		}
 		.nav-item {
+			position: relative;
 			display: inline-block;
-			padding: 0 2.5rem;
+			padding: 0 1.25rem;
 			a {
 				font-size: 14px;
 				color: $theme-color;
@@ -178,14 +194,41 @@ header.fixed-nav {
 					color: $orange-color;
 				}
 			}
+			&.active {
+				a {
+					color: $color-orange;
+				}
+			}
+		}
+		.nav-link {
+			display: inline;
+		}
+		.nav-item-new {
+		    position: absolute;
+		    top: -.75rem;
+		    color: red;
+		    letter-spacing: 1px;
+		    font-weight: 700;
+		    margin-left: -0.75rem;
 		}
 	}
 }
 
 #topic {
-	margin-top: 4rem;
+	margin-top: 1rem;
+	@include breakpoint($md) {
+	    margin-top: 0rem;
+	    background: #eee;
+	    padding: 3rem 0;
+	}
 	position: relative;
 	.topic-content {
+		text-align: center;
+		margin-bottom: 2rem;
+		@include breakpoint($md) {
+			text-align: left;
+			margin-bottom: 0;
+		}
 		.date {
 			font-family: $font-ai;
 			font-size: 16px;
@@ -433,7 +476,10 @@ header.fixed-nav {
 
 #intro {
 
-	margin-top: 5rem;
+	margin-top: 1rem;
+	@include breakpoint($xs) {
+		margin-top: 5rem;
+	}
 
 	.intro-img {
 		margin: 4rem 0;
@@ -459,11 +505,15 @@ header.fixed-nav {
 #projects {
 
 	.block-title {
+		line-height: 1.7;
 		margin-top: 1rem;
 		margin-bottom: 2rem;
 	}
 
-	margin-top: 5rem;
+	margin-top: 1rem;
+	@include breakpoint($xs) {
+		margin-top: 4rem;
+	}
 
 	.project-title {
 		margin-top: 1.5rem;
@@ -498,6 +548,15 @@ footer {
 	margin-top: 5rem;
 	margin-bottom: 3rem;
 	color: $color-blue-medium;
+	.media {
+		.facebook {
+			text-align: center;
+		}
+		display: block;
+		@include breakpoint($md) {
+			display: flex;
+		}
+	}
 	.copyright {
 		margin-top: 2rem;
 		text-align: center;
@@ -518,8 +577,12 @@ footer {
 		margin: 15px 20px 15px 0;
 	}
 	.organizer {
-		margin: 0;
 		padding: 0;
+		margin: 3rem 0 0 0;
+		@include breakpoint($md) {
+			margin: 0;
+			padding: 0;	
+		}
 		li {
 			margin: 0;
 			padding: 0;
@@ -571,14 +634,18 @@ footer {
 	.date {
 		font-family: $font-ai;
 		color: $color-blue-dark;
-		font-size: 1.5rem;
-		letter-spacing: 2px;
-		margin-bottom: .5rem;
+	    font-size: 1.25rem;
+	    letter-spacing: 2px;
+	    margin-bottom: 2rem;
+	    margin-top: -28px;
+	    margin-left: 100px;
 	}
 
 	.go-title {
 		color: $color-orange;
-		margin-bottom: 1.5rem;
+		margin-bottom: 0;
+	    width: 280px;
+	    margin-left: -2px;
 	}
 
 	.hashtags {
@@ -588,14 +655,18 @@ footer {
 	}
 
 	.slogan {
-		margin-top: 0.5rem;
+		    margin-top: 1.5rem;
 		margin-bottom: 1rem;
 		letter-spacing: 2px;
 	}
 
 	.space {
 		padding: 1rem 0;
-		margin: .5rem 0 .5rem 0;
+	}
+
+	.topspace {
+		padding: 1rem 0;
+		margin-top: 2rem;
 	}
 
 	.img-note {
@@ -608,17 +679,18 @@ footer {
 
 	#go-movie-forum {
 		.block-title {
-			margin-top: .5rem;
+			margin-top: 0rem;
 		}
 		.forum-context {
-			font-size: 0.9rem;
 		}
+
 	}
 	
 	
 	.block-title {
 		font-size: 1.5rem;
-		margin: 1rem 0 0.5rem 0;
+		line-height: 2rem;
+		margin: .5rem 0 0.5rem 0;
 		&.green {
 			color: $color-green;
 		}
@@ -627,6 +699,7 @@ footer {
 	.sub-title {
 		font-size: 0.9rem;
 		margin-bottom: 1rem;
+		margin-top: 0rem;
 		&.green {
 			color: $color-green;
 		}
@@ -636,6 +709,8 @@ footer {
 		font-size: 1rem;
 		margin-top: .5rem;
 		margin-bottom: 1rem;
+		color: $color-blue-medium;
+		border-bottom: 1px solid $color-blue-medium;
 	}
 
 	.sub-description {
@@ -645,12 +720,23 @@ footer {
 		color: $color-brown;
 	}
 
+	.description {
+		margin-bottom: 2rem;
+	}
+
 
 	.info-name {
 		font-size: 0.875rem;
 		color: $color-blue-dark;
 		letter-spacing: 3px;
-		margin: 1rem 0;
+		margin: 1rem 0 .5rem 0;
+		a {
+			color: $color-blue-dark;
+			&:hover {
+				color: lighten($color-blue-dark, 10);
+				text-decoration: none;
+			}
+		}
 		&.brown {
 			color: $color-brown;
 		}
@@ -660,7 +746,13 @@ footer {
 	}
 
 	#go-realpart-title {
-		margin-top: .5rem;
+		.block-title {
+			margin-top: 0rem;
+		}
+	}
+
+	.band {
+		margin-bottom: 2rem;
 	}
 
 	#go-realpart-info {
@@ -694,12 +786,13 @@ footer {
 	#live-movie {
 		position: relative;
 		height: 400px;
+		padding: 0;
 		.movie-bg {
 			position: absolute;
 			left: 0;
 			top: 0;
 			z-index: 5;
-			background: url('../images/live-4.png');
+			object-fit: cover;
 			width: 100%;
 			height: 400px;
 		}
@@ -718,7 +811,18 @@ footer {
 			padding: 3rem 2rem;
 			right: 0;
 			top: 0;
-			width: 550px;
+			display: none;
+			@include breakpoint($md) {
+				
+			}
+			@include breakpoint($lg) {
+				display: block;
+				width: 400px;
+			}
+			@include breakpoint($xl) {
+				display: block;
+				width: 550px;
+			}
 			text-align: right;
 		}
 	}
@@ -726,6 +830,9 @@ footer {
 	#go-movie {
 		.info {
 			font-size: 0.9rem;
+		}
+		.movie-single {
+			margin-bottom: 1.5rem;
 		}
 	}
 
@@ -750,9 +857,18 @@ footer {
 	}
 
 	.preorder {
-		margin: 1.5rem 0;
+		padding: 1.5rem 0;
+		text-align: center;
+		@include breakpoint($lg) {
+			text-align: left;
+		}
 		.preorder-button {
-			float: left;
+			display: inline-block;
+			float: none;
+			@include breakpoint($lg) {
+				display: block;
+				float: left;
+			}
 			background: $color-pink;
 			padding: .5rem 1.25rem;
 			font-weight: 700;
@@ -764,11 +880,55 @@ footer {
 				background: lighten($color-pink, 10);
 				text-decoration: none;
 			}
+			&.orange {
+				background: $color-orange;
+					&:hover {
+					background: lighten($color-orange, 10);
+					text-decoration: none;
+				}
+			}
 		}
 		.preorder-info {
-			margin-left: 1.5rem;
-			line-height: 1.4rem;
-			float: left;
+			margin-left: 0;
+			margin-top: 1.5rem;
+			float: none;
+			@include breakpoint($lg) {
+				float: left;
+				margin-top: 0;
+				margin-left: 1.5rem;
+			}
+			line-height: 1.7;
+			@include breakpoint($md) {
+				line-height: 1.4rem;
+			}
+			
+		}
+	}
+	
+	#go-eats {
+		margin: 1rem -15px;
+		padding: 2rem 1rem;
+		@include breakpoint($xs) {
+			margin: 3rem 0;
+			padding: 2rem 2rem;	
+		}
+		@include breakpoint($lg) {
+			margin: 3rem 0;
+			padding: 4rem 2rem;	
+		}
+		border-radius: .25rem;
+		background: rgba($color-orange, 0.05);
+		text-align: center;
+		@include breakpoint($lg) {
+			text-align: left;
+		}
+		.promote-title {
+			font-size: 1.25rem;
+			font-weight: 300;
+			line-height: 1.75rem;
+		}
+		.eats-image {
+			margin-bottom: 1.5rem;
 		}
 	}
 
@@ -788,8 +948,28 @@ footer {
 		}
 	}
 
+	.intro-img {
+		object-fit: cover;
+		width: 100%;
+		height: 300px;
+		@include breakpoint($xl) {
+			height: 300px;
+		}
+	}
+
+	.nightmarket-img {
+		object-fit: cover;
+		width: 100%;
+		height: 250px;
+	}
+
 }
 
 
-
-
+#artpassport {
+	margin-top: 4rem;
+	.block-title {
+		margin-top: .5rem;
+		margin-bottom: 1.5rem;
+	}
+}

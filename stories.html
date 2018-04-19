@@ -32,17 +32,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<!-- fixed header -->
 	<header class="fixed-nav">
-		<nav>
-			<li class="nav-item"><a href="go.html">藝趣生活週</a></li>
-			<li class="nav-item"><a href="projects.html">六大專案</a></li>
-			<li class="nav-item">
-				<!-- logo -->
-				<a href="index.html"><img src="assets/images/logo.png" width="50" height="50"></a>
-				<!-- logo end -->
-			</li>
-			<li class="nav-item"><a href="stories.html">主線故事</a></li>
-			<li class="nav-item"><a href="stamp.html">藝文護照集章</a></li>
-		</nav>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg nav-padding">
+				<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" width="50" height="50"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link" href="go.html">藝趣生活週</a><small class="nav-item-new">NEW</small></li>
+						<li class="nav-item"><a class="nav-link" href="projects.html">六大專案</a></li>
+						<li class="nav-item"><a class="nav-link" href="stories.html">主線故事</a></li>
+						<li class="nav-item"><a class="nav-link" href="stamp.html">藝文護照集章</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 	</header>
 
 	<!-- end fixed header -->
@@ -69,6 +74,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<p>1021是他的代碼，但很快地，他便不僅僅是1021了。</p>
 					<p>他將會擁有一個真正的名字—安普希。</p>
 					<p>那一晚觸碰到的黃沙，和鋪著星斗的夜空，他永遠也不會忘記。</p>
+					<p class="text-center">・・・</p>
 					<p><strong>角色介紹</strong></p>
 					<p>機器人1021：在機械城中工廠工作的小機器人，因一場意外掉出了機械城，之後被取名為安普希。</p>
 					<p>赫菲斯：人類，工廠的老闆，掌控著工廠中的機器人。認為機器人就是人類所創造出的工具，並一直希望能利用機器人獲取更大的利益。</p>
@@ -96,7 +102,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<p>「轟！」</p>
 					<p>生產線隨著斷電嘎然停止，堆疊成山的伊立司藥瓶失去向前流動的動能，摔下生產線，破碎藥瓶中的液體在廠房地面流淌。</p>
 					<p>1021內心一震。他不曾見過真正的陽光和彩虹，在漆黑的城市獨自工作數十載，他不相信墮落的人類世界真能發明如伊立司般的萬能解藥。儘管如此，若是不盡早完成伊立司，滿足人類的慾望，人類只會更兇殘的侵害彼此。他搖晃著耗盡電力的身軀，想接起即將摔落地面的伊立司，卻一腳摔進地下儲電廠的維修坑道。</p>
-					<p>--------------------------------------------------------------</p>
+					<p class="text-center">・・・</p>
 					<p>「這裡是？」</p>
 					<p>1021機身隆隆作響，似乎有過熱的狀況發生。但柔軟的細沙支撐著身體，受到劇烈撞擊和過度運作的機身慢慢冷卻。</p>
 					<p>「我離開機械城了？」</p>
@@ -167,13 +173,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<footer>
 		<div class="container">
-			<div class="row">
-				<div class="col-md-4 fb-fan-page">
-					<div class="d-flex justify-content-center">
-						<iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/NCTUArtFest/&tabs=timeline&width=280&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2448538618705290" style="width:260px;height:300px;border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-					</div>
+			<div class="media">
+				<div class="mr-5 facebook">
+					<iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/NCTUArtFest/&tabs=timeline&width=280&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2448538618705290" style="width:280px;height:300px;border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 				</div>
-				<div class="col-md-8 align-items-center">
+  				<div class="media-body">
 					<ul class="organizer">
 						<li class="organizer-main">主辦單位｜2018 交大藝趣節團隊</li>
 						<li class="organizer-support">
@@ -208,9 +212,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 	</footer>
-
-
-
-
 </body>
 </html>
