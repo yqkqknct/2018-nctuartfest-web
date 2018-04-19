@@ -7,6 +7,12 @@
 $bg-color: #F3F3F4;
 $theme-color: #0C273A;
 $orange-color: #E37224;
+$color-orange: #E37224;
+$color-brown: #AA967D;
+$color-blue-dark: #0A2C42;
+$color-blue-medium: #313D42;
+$color-green: #7FA0A6;
+$color-pink: #DC7376;
 
 $device-xs-up: 320px;
 $device-xs-only: 320px 767px;
@@ -18,6 +24,12 @@ $font-ai: 'Poiret One', cursive;
 $font-noto: 'Noto Sans TC', sans-serif;
 $font-mix: 'Poiret One', cursive, 'Noto Sans TC', sans-serif;
 $font-context:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+.clearfix::before,
+.clearfix::after {
+  flex-basis: 0;
+  order: 1;
+}
 
 @mixin scale($factor) {
 	-webkit-transform: scale($factor);
@@ -70,7 +82,7 @@ $font-context:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
 }
 
 @mixin common-image($image, $xsw, $xsh, $mdw, $mdh, $xlw, $xlh) {
-	background: url('../images/common/' + $image + '.png');
+	background: url('../images/' + $image + '.png');
 	@include responsive-image($image, $xsw, $xsh, $mdw, $mdh, $xlw, $xlh);
 }
 
@@ -101,152 +113,86 @@ html, body{
 	background-color: $bg-color;
 	font-family: $font-noto;
 	font-weight: 400;
-	font-size: 14px;
-	line-height: 20px;
-	letter-spacing: 1.33px;
-	@include breakpoint($device-xl-up) {
+	font-size: 15px;
+	@include breakpoint($device-xs-up) {
+		font-weight: 400;
 		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: 2.66px;
-	} 
-}
-
-.container {
-	max-width: 310px;
-    @include breakpoint($device-md-up) {
-		max-width: 688px;
-    }
-    @include breakpoint($device-xl-up) {
-		max-width: 1040px;
-    }
-}
-
-// components style
-
-.main-logo{
-	@include breakpoint($device-xs-only) {
-		float: right;
-		margin-left: 0px;
-		margin-top: 10px;
-		margin-right: 10px;	
-		@include scale(0.6);
 	}
-	@include breakpoint($device-md-up) {
-		float: left;
-		margin-left: 50px;
-		margin-top: 50px;
-	}
+	line-height: 1.7;
+	letter-spacing: 1.33;
 }
 
-a {
-	color: $orange-color;
-	&:hover {
-		color: lighten($orange-color, 10);
-		text-decoration: none;
-	}
+img {
+	max-width: 100%;
 }
 
-.header {
+// // .container {
+// // 	max-width: 310px;
+// //     @include breakpoint($device-md-up) {
+// // 		max-width: 688px;
+// //     }
+// //     @include breakpoint($device-xl-up) {
+// // 		max-width: 1040px;
+// //     }
+// // }
+
+// // components style
+
+// // .main-logo{
+// // 	@include breakpoint($device-xs-only) {
+// // 		float: right;
+// // 		margin-left: 0px;
+// // 		margin-top: 10px;
+// // 		margin-right: 10px;	
+// // 		@include scale(0.6);
+// // 	}
+// // 	@include breakpoint($device-md-up) {
+// // 		float: left;
+// // 		margin-left: 50px;
+// // 		margin-top: 50px;
+// // 	}
+// // }
+
+// a {
+// 	color: $orange-color;
+// 	&:hover {
+// 		color: lighten($orange-color, 10);
+// 		text-decoration: none;
+// 	}
+// }
+
+header.fixed-nav {
 	position: relative;
-	height: 600px;
-	@include breakpoint($device-md-up) { height: 648px; }
-	@include breakpoint($device-xl-up) { height: 848px; }
-	.components {
-		.light {
-			position: absolute;
-			top: 0;
-			left: 20px;
-			@include breakpoint($device-md-up) {
-				top: -10px;
-				left: 120px;
-			}
-			@include breakpoint($device-xl-up) {
-				top: 0;
-				left: 99px;
-			}
-			@include common-image('header-light', 29px, 109px, 48px, 184px, 81px, 310px);
-		}
-		.pipe {
-			position: absolute;
-			top: 0;
-			left: 74px;
-			@include breakpoint($device-md-up) {
-				top: 0;
-				left: 246px;
-			}
-			@include breakpoint($device-xl-up) {
-				top: 0;
-				left: 206px;
-			}
-			@include common-image('header-pipe', 176px, 85px, 369px, 177px, 591px, 284px);
-		}
-	}		
-	.info {
-		position: absolute;
-		top: 122px;
-		left: 5px;	
-		@include breakpoint($device-md-up) {
-			top: 276px;
-			left: 79px;	
-		}
-		@include breakpoint($device-xl-up) {
-			top: 379px;
-			left: 70px;
-		}
-		color: $theme-color;
-		@include breakpoint($device-xs-only) {
-			text-align: center;
-			width: 300px;
-			margin: auto;
-		}
-		.year {
-			font-family: $font-ai;
-			line-height: 28px;
-			letter-spacing: 1.33;
-			font-size: 24px;
-			margin-bottom: 20px;
-			@include breakpoint($device-xs-only) {
-				font-size: 16px;
-				line-height: 18px;
-				letter-spacing: 0.9;
+	padding: 2rem 0;
+	text-align: center;
+	nav {
+		text-align: center;
+		.nav-item {
+			display: inline-block;
+			padding: 0 2.5rem;
+			a {
+				font-size: 14px;
+				color: $theme-color;
+				text-decoration: none;
+				&:hover {
+					color: $orange-color;
+				}
 			}
 		}
-		.topic {
-			@include breakpoint($device-xs-only) {
-				margin: 0 auto;
-			}
-			@include common-image('nctuartfest', 190px, 37px, 222px, 44px, 317px, 63px);
-		}
-		.topic-english {
-			margin-top: 6px;
-			font-family: $font-ai;
-			font-size: 20px;
-			letter-spacing: 1.11px;
-			line-height: 23px;
-			margin-bottom: 30px;
-			@include breakpoint($device-md-up) {
-				font-size: 24px;
-				letter-spacing: 1.33px;
-				line-height: 28px;
-			}
-			@include breakpoint($device-xl-up) {
-				font-size: 36px;
-				letter-spacing: 2px;
-				line-height: 42px;
-			}
-		}
+	}
+}
+
+#topic {
+	margin-top: 4rem;
+	position: relative;
+	.topic-content {
 		.date {
 			font-family: $font-ai;
 			font-size: 16px;
 			letter-spacing: 0.8px;
 			line-height: 18px;
-			@include breakpoint($device-md-up) {
-				font-size: 20px;
-				letter-spacing: 1.11px;
-				line-height: 1.16;
-			}
 			@include breakpoint($device-xl-up) {
-				font-size: 24px;
+				font-size: 16px;
 				letter-spacing: 1.33px;
 			}
 		}
@@ -264,423 +210,322 @@ a {
 		    margin: 8px 5px;
 		}
 		.place {
+			display: block;
 			font-weight: 300;
 			font-family: $font-noto;
 			font-size: 16px;
 			letter-spacing: 5px;
 			line-height: 24px;
-			@include breakpoint($device-md-up) {
-				font-size: 20px;
-				letter-spacing: 6.25px;
-				line-height: 1.16;
-			}
 			@include breakpoint($device-xl-up) {
-				font-size: 24px;
+				font-size: 16px;
 				letter-spacing: 7.5px;
 			}
 		}
-	}
-	.sketch {
-		position: absolute;
-		top: 330px;
-			left: 19px;
-		@include breakpoint($device-md-up) {
-			top: 230px;
-			left: 363px;
-		}
-		@include breakpoint($device-xl-up) {
-			top: 200px;
-			left: 489px;
-		}
-		@include common-image('header-sketch', 267px, 261px, 298px, 291px, 533px, 546px);
-	}
-}
-
-
-
-.topic{
-	position: relative;
-	height: 800px;
-	@include breakpoint($device-md-up) {
-		height: 435px;
-	}
-	@include breakpoint($device-xl-up) {
-		height: 720px;
-	}
-	.topic-sketch {
-		@include breakpoint($device-xs-only) {
-		}
-		@include breakpoint($device-md-up) {
-			position: absolute;
-			left: -53px;
-			top: 0;
-		}
-		@include breakpoint($device-xl-up) {
-			left: -216px;
-			top: 0px;
-		}
-		@include seperate-image('topic-sketch', 289px, 186px, 142px, 333px, 419px, 556px);
-	}
-	.topic-english-1{
-		color: $theme-color;
-		font-weight: 200;
-		letter-spacing: 10px;
-	}
-	.robot {
-		position: absolute;
-		@include breakpoint($device-xl-up) {
-			top: 331px;
-			left: 52px;
-		}
-		@include common-image('topic-robot', 58px, 162px, 76px, 212px, 110px, 307px);
-	}
-	.intro{
-		position: relative;
-    	z-index: 10;
-		@include breakpoint($device-xs-only) {
-			margin-left: 52px;
-    		margin-top: 40px;
-    	}
-		@include breakpoint($device-md-up) { 
-			position: absolute;
-			width: 280px; 
-			left: 388px;
-			top: 12px;
-		}
-		@include breakpoint($device-xl-up) { 
-			width: 424px;
-			position: absolute;
-			top: 173px;
-			left: 286px;
-		}
-		.topic-english-2{
+		.year {
 			font-family: $font-ai;
-			font-weight: 100;
-			margin-bottom: 50px;
-			color: $theme-color;
-			font-size: 30px;
-			letter-spacing: 5px;
-			line-height: 35px;
-			@include breakpoint($device-md-up) { 
-				line-height: 49px;
-				font-size: 42px;
-				letter-spacing: 6px;
-				margin-left: -20px;
-			}
-			@include breakpoint($device-xl-up) { 
-				line-height: 70px;
-				font-size: 60px;
-				letter-spacing: 11px;
-				margin-left: -27px;
-			}
-			
+			font-size: 1.25rem;
+			margin-bottom: 1rem;
 		}
-		.intro-content{
-			@include breakpoint($device-xs-only) {
-				margin-top: 260px;
-				width: 260px;
-    			margin-left: -35px;
-			}
-			font-size: 14px;
-			line-height: 20px;
-			letter-spacing: 1.67px;
-			@include breakpoint($device-md-up) { 
-				font-size: 16px;
-				line-height: 24px;
-				letter-spacing: 1.33px;
-			}
-			@include breakpoint($device-xl-up) { 
-				font-size: 20px;
-				line-height: 36px;
-				letter-spacing: 1.67px;	
-			}
-			color: $theme-color;
-			font-family: $font-noto;
-			font-weight: 400;
+    	.topic-tag {
+    		margin-top: 3rem;
+	    	color: $color-brown;
 		}
-		.medium-articles {
-			display: inline-block;
-			background: $theme-color;
-			color: white;
-		    padding: 6px 18px;
-		    border-radius: 2px;
-		    font-size: 16px;
-		    margin-top: 12px;
-			@include breakpoint($device-xs-only) {
-				font-size: 14px;
-				letter-spacing: 2px;
-				background: transparent;
-				color: $orange-color;
-				border-bottom: 1px solid $orange-color;
-				padding: 0;
-			    margin-top: 24px;
-    			margin-left: 20px;
-			}
-			&:hover {
-				text-decoration: none;
-			}
+    	.topic {
+    		width: 233px;
+    		height: auto;
 		}
+		.topic-english {
+			font-family: $font-ai;
+			font-size: 1.5rem;
+			margin-top: .75rem;
+			margin-bottom: 3rem;
+			line-height: 21px;
+			letter-spacing: 1.5px;
+		}
+		.topic-slogan {
+			margin: 0 auto;
+		}
+	    
 	}
-
-	.robot {
-		position: absolute;
-		z-index: 9;
-		top: 366px;
-		left: 23px;
-		@include breakpoint($device-md-up) {
-			top: 151px;
-			left: 232px;
+	  //  <div class="h-gear"></div>
+			// <div class="h-l"></div>
+			// <div class="h-line"></div>
+			// <div class="h-robot"></div>
+			// <div class="h-t"></div>
+			// <div class="h-oil"></div>
+	.components {
+		.h-gear {
+			position: absolute;
+			left: 5vh;
+			top: 20vh;
+			z-index: 10;
+			width: 116px;
 		}
-		@include breakpoint($device-xl-up) {
-			top: 331px;
-			left: 52px;
+		.h-gear-red {
+			position: absolute;
+			right: 20vh;
+			top: 80vh;
+			z-index: 10;
+			width: 107px;
 		}
-	}
-
-	.title {
-		@include common-image('topic-title', 0px, 0px, 137px, 32px, 202px, 47px);
-		position: absolute;
-		@include breakpoint($device-md-up) {
-			top: 37px;
-			left: 164px;
+		.h-l {
+			position: absolute;
+			right: 35vh;
+			top: 65vh;
+			z-index: 10;
+			width: 123px;
 		}
-		@include breakpoint($device-xl-up) {
-			top: 111px;
-			left: 804px;
+		.h-line {
+			position: absolute;
+			left: 5vh;
+			top: 40vh;
+			z-index: 10;
+			width: 44px;
 		}
-	}
-
-	.products {
-		position: absolute;
-		z-index: 8;
-		@include common-image('topic-products', 270px, 270px, 186px, 186px, 344px, 344px);
-		top: 248px;
-		left: 65px;
-		@include breakpoint($device-md-up) {
-			top: 113px;
-			left: 71px;
+		.h-robot {
+			position: absolute;
+			left: 30vh;
+			top: 70vh;
+			z-index: 10;
+			width: 95px;
 		}
-		@include breakpoint($device-xl-up) {
-			top: 214px;
-			left: 751px;
+		.h-t {
+			position: absolute;
+			left: 35vh;
+			top: 15vh;
+			z-index: 10;
+			width: 139px;
 		}
-		@include breakpoint($device-xs-only) {
-			@include seperate-image('topic-products', 270px, 270px, 186px, 186px, 344px, 344px);
+		.h-oil {
+			position: absolute;
+			right: 35vh;
+			top: 20vh;
+			z-index: 10;
+			width: 67px;
 		}
+	}	
+	.topic-background {
+		width: 100%;
+	    object-fit: cover;
 	}
 }
 
-.projects {
-	position: relative;
-	.title{
-		@include seperate-image('project-title', 279px, 163px, 329px, 154px, 620px, 315px);
+// .header {
+// 	position: relative;
+// 	height: 600px;
+// 	@include breakpoint($device-md-up) { height: 648px; }
+// 	@include breakpoint($device-xl-up) { height: 848px; }
+	
+// 	.info {
+// 		position: absolute;
+// 		top: 122px;
+// 		left: 5px;	
+// 		@include breakpoint($device-md-up) {
+// 			top: 276px;
+// 			left: 79px;	
+// 		}
+// 		@include breakpoint($device-xl-up) {
+// 			top: 379px;
+// 			left: 70px;
+// 		}
+// 		color: $theme-color;
+// 		@include breakpoint($device-xs-only) {
+// 			text-align: center;
+// 			width: 300px;
+// 			margin: auto;
+// 		}
+// 		.year {
+// 			font-family: $font-ai;
+// 			line-height: 28px;
+// 			letter-spacing: 1.33;
+// 			font-size: 24px;
+// 			margin-bottom: 20px;
+// 			@include breakpoint($device-xs-only) {
+// 				font-size: 16px;
+// 				line-height: 18px;
+// 				letter-spacing: 0.9;
+// 			}
+// 		}
+// 		.topic {
+// 			@include breakpoint($device-xs-only) {
+// 				margin: 0 auto;
+// 			}
+// 			@include common-image('nctuartfest', 190px, 37px, 222px, 44px, 317px, 63px);
+// 		}
+// 		.topic-english {
+// 			margin-top: 6px;
+// 			font-family: $font-ai;
+// 			font-size: 20px;
+// 			letter-spacing: 1.11px;
+// 			line-height: 23px;
+// 			margin-bottom: 30px;
+// 			@include breakpoint($device-md-up) {
+// 				font-size: 24px;
+// 				letter-spacing: 1.33px;
+// 				line-height: 28px;
+// 			}
+// 			@include breakpoint($device-xl-up) {
+// 				font-size: 36px;
+// 				letter-spacing: 2px;
+// 				line-height: 42px;
+// 			}
+// 		}
+// 		.date {
+// 			font-family: $font-ai;
+// 			font-size: 16px;
+// 			letter-spacing: 0.8px;
+// 			line-height: 18px;
+// 			@include breakpoint($device-md-up) {
+// 				font-size: 20px;
+// 				letter-spacing: 1.11px;
+// 				line-height: 1.16;
+// 			}
+// 			@include breakpoint($device-xl-up) {
+// 				font-size: 24px;
+// 				letter-spacing: 1.33px;
+// 			}
+// 		}
+// 		.date-line {
+// 		    display: inline-block;
+// 		    border-bottom: 1px solid #0C273A;
+// 		    height: 1px;
+// 		    width: 30px;
+// 		    @include breakpoint($device-md-up) {
+// 		    	width: 40px;
+// 			}
+// 			@include breakpoint($device-xl-up) {
+// 				width: 49px;
+// 			}
+// 		    margin: 8px 5px;
+// 		}
+// 		.place {
+// 			font-weight: 300;
+// 			font-family: $font-noto;
+// 			font-size: 16px;
+// 			letter-spacing: 5px;
+// 			line-height: 24px;
+// 			@include breakpoint($device-md-up) {
+// 				font-size: 20px;
+// 				letter-spacing: 6.25px;
+// 				line-height: 1.16;
+// 			}
+// 			@include breakpoint($device-xl-up) {
+// 				font-size: 24px;
+// 				letter-spacing: 7.5px;
+// 			}
+// 		}
+// 	}
+// 	.sketch {
+// 		position: absolute;
+// 		top: 330px;
+// 			left: 19px;
+// 		@include breakpoint($device-md-up) {
+// 			top: 230px;
+// 			left: 363px;
+// 		}
+// 		@include breakpoint($device-xl-up) {
+// 			top: 200px;
+// 			left: 489px;
+// 		}
+// 		@include common-image('header-sketch', 267px, 261px, 298px, 291px, 533px, 546px);
+// 	}
+// }
 
-	    margin-bottom: 5rem;
-    	margin-top: 1rem;
+#intro {
+
+	margin-top: 5rem;
+
+	.intro-img {
+		margin: 4rem 0;
+
 	}
-	.list {
-		.preview {
+
+	.intro-title {
+		font-family: $font-ai;
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.intro-content {
+		color: $color-brown;
+		p {
+			margin-bottom: 1.5rem;
 		}
 	}
-	.item {
-		margin-bottom: 30px;
+
+}
+
+
+#projects {
+
+	.block-title {
+		margin-top: 1rem;
+		margin-bottom: 2rem;
 	}
-	.project-desc {
-		font-size: 14px;
-		letter-spacing: 1.9px;
-		line-height: 20px;
-		@include breakpoint($device-xl-up) {
-			font-size: 16px;
-			letter-spacing: 2.22px;
-			line-height: 24px;
-		}
-	}
+
+	margin-top: 5rem;
+
 	.project-title {
-
-		font-weight: 300;
-		font-size: 20px;
-		letter-spacing: 2.78px;
-		line-height: 28px;
-		margin-top: 12px;
-		margin-bottom: 12px;	
-		@include breakpoint($device-md-up) {
-			margin-top: 3px;
+		margin-top: 1.5rem;
+		margin-bottom: 1rem;
+		font-size: 1.125rem;
+		a {
+			text-decoration: none;
+			color: $color-blue-dark;
 		}
-		@include breakpoint($device-xl-up) {
-			font-size: 24px;
-			letter-spacing: 3.33px;
-			line-height: 33px;
-			margin-top: 6px;
-			margin-bottom: 24px;	
+		// font-family: $font-noto;
+	}
+
+	.project-description {
+		font-size: 0.9rem;
+		color: $color-brown;
+		// font-family: $font-noto;
+	}
+
+	.project-info {
+		margin-bottom: 3rem;
+		font-size: 0.9rem;
+		color: $color-orange;
+		.place {
+			display: block;
+			margin-bottom: 0.5rem;
 		}
 	}
+
 }
 
-.souvenir {
-	.title{
-		margin-top: 70px;
-		margin-bottom: 40px;
-		@include breakpoint($device-md-up) {
-			margin-top: 70px;
-			margin-bottom: 70px;
-		}
-		@include breakpoint($device-xl-up) {
-			margin-top: 112px;
-			margin-bottom: 112px;
-		}
-		@include seperate-image('product-title', 245px, 34px, 327px, 44px, 523px, 66px);
+footer {
+	margin-top: 5rem;
+	margin-bottom: 3rem;
+	color: $color-blue-medium;
+	.copyright {
+		margin-top: 2rem;
+		text-align: center;
+		color: $color-brown;
+		letter-spacing: 3px;
 	}
-	.list{
-		.item{
-			.preview {
-			}
-			.product-intro {
-				line-height: 40px;
-				vertical-align: center;
-			}
-		}		
-	}
-}
-
-.support {
-	.title {
-		@include seperate-image('support-title', 164px, 55px, 181px, 68px, 282px, 109px);
+	a {
+		color: $color-blue-dark;
+		text-decoration: none;
+		transition: .07s;
+		&:hover {
+			text-decoration: none;
+			color: $color-orange;
+		}
 	}
 	.slogo {
 		display: inline-block;
 		margin: 15px 20px 15px 0;
 	}
-	.diamond {
-		background: url('../images/common/support-a.png');
-		background-size: cover;
-		width: 336px;
-		height: 50px;
-		@include transform-origin;
-		@include breakpoint($device-xs-only) {
-			@include scale(0.4);
-		}
-		@include breakpoint($device-md-up) {
-			@include scale(0.5);
-		}
-	}
-	.platinum {
-		background: url('../images/common/support-b.png');
-		background-size: cover;
-		width: 336px;
-		height: 50px;
-		@include transform-origin;
-		@include breakpoint($device-xs-only) {
-			@include scale(0.4);
-		}
-		@include breakpoint($device-md-up) {
-			@include scale(0.5);
-		}
-	}
-	.gold {
-		background: url('../images/common/support-c.png');
-		background-size: cover;
-		width: 274px;
-		height: 50px;
-		@include transform-origin;
-		@include breakpoint($device-xs-only) {
-			@include scale(0.4);
-		}
-		@include breakpoint($device-md-up) {
-			@include scale(0.5);
-		}
-	}
-}
-
-footer {
-	margin-top: 70px;
-	margin-bottom: 60px;
-	.sketch{
-		text-align: center;
-		padding-left: 20px;
-		padding-right: 20px;
-		padding-top: 20px; 
-		@include breakpoint($device-md-up) {
-			padding-top: 70px;	
-
-			background: url('../images/common/footer-sketch.png');
-			background-size: 694px 301px;
-			width: 694px;
-			height: 301px;
-		}
-		.topic {
-			@include breakpoint($device-xs-only) {
-				display: block;
-				margin: 0 auto;
-			}
-			display: inline-block;
-			width: 137px;
-			height: 24px;
-			vertical-align: sub;
-			@include common-image('nctuartfest', 137px, 24px, 137px, 24px, 137px, 24px);
-		}
-		.date-line {
-		    display: inline-block;
-		    border-bottom: 1px solid #0C273A;
-		    height: 1px;
-
-		    @include breakpoint($device-md-up) {
-		    	width: 40px;
-			}
-			@include breakpoint($device-xl-up) {
-				width: 49px;
-			}
-		    margin: 8px 5px;
-		}
-		.slogan {
-			@include breakpoint($device-xs-only) {
-				font-size: 16px;
-				line-height: 24px;
-				letter-spacing: 2.66px;
-			}
-			margin-top: 5px;
-		}
-		.datetime {
-			font-size: 14px;
-		    line-height: 20px;
-		    margin-top: 5px;
-		}
-		p {
-			transform: rotate(-1deg);
-		}
-	}
-	.fb-fan-page{
-		margin-top: 50px;
-		@include breakpoint($device-md-up) {
-			float: left;
-			width: 280px;
-			margin-left: 5%;
-		}
-		@include breakpoint($device-xl-up) {
-			float: left;
-			width: 280px;
-			margin-left: 20%;
-		}
-	}
 	.organizer {
-		margin-top: 50px;
-		@include breakpoint($device-md-up) {
-			float: left;
-			width: 40%;
-			margin-left: 20px;
-		}
-		@include breakpoint($device-xl-up) {
-			float: left;
-			width: 30%;
-			margin-left: 20px;
+		margin: 0;
+		padding: 0;
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
 		}
 	}
-	.footer-ai {
-		font-family: $font-ai;
-		font-size: 24px;
-		letter-spacing: 3.33px;
-		line-height: 28px;
-	}
-	
 }
 
 
@@ -699,5 +544,252 @@ footer {
 .page-featured-image {
 	margin-bottom: 2rem;
 }
+
+#stories {
+
+	margin-top: 4rem;
+
+	h1 {
+		font-size: 2rem;
+		color: $color-blue-dark;
+		margin-bottom: 2rem;
+	}
+	h2 {
+		text-align: center;
+		font-size: 1rem;
+		color: $color-orange;
+		letter-spacing: 3px;
+		margin-bottom: 2rem;
+		margin-top: 3rem;
+	}
+
+}
+
+
+#go {
+
+	.date {
+		font-family: $font-ai;
+		color: $color-blue-dark;
+		font-size: 1.5rem;
+		letter-spacing: 2px;
+		margin-bottom: .5rem;
+	}
+
+	.go-title {
+		color: $color-orange;
+		margin-bottom: 1.5rem;
+	}
+
+	.hashtags {
+		font-size: 0.75rem;
+		letter-spacing: 4px;
+		color: $color-brown;
+	}
+
+	.slogan {
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+		letter-spacing: 2px;
+	}
+
+	.space {
+		padding: 1rem 0;
+		margin: .5rem 0 .5rem 0;
+	}
+
+	.img-note {
+		font-size: 0.75rem;
+		color: $color-brown;
+		letter-spacing: 2px;
+	}
+
+	
+
+	#go-movie-forum {
+		.block-title {
+			margin-top: .5rem;
+		}
+		.forum-context {
+			font-size: 0.9rem;
+		}
+	}
+	
+	
+	.block-title {
+		font-size: 1.5rem;
+		margin: 1rem 0 0.5rem 0;
+		&.green {
+			color: $color-green;
+		}
+	}
+
+	.sub-title {
+		font-size: 0.9rem;
+		margin-bottom: 1rem;
+		&.green {
+			color: $color-green;
+		}
+	}
+
+	.item-title {
+		font-size: 1rem;
+		margin-top: .5rem;
+		margin-bottom: 1rem;
+	}
+
+	.sub-description {
+		font-size: 0.825rem;
+		line-height: 1.2;
+		letter-spacing: 2px;
+		color: $color-brown;
+	}
+
+
+	.info-name {
+		font-size: 0.875rem;
+		color: $color-blue-dark;
+		letter-spacing: 3px;
+		margin: 1rem 0;
+		&.brown {
+			color: $color-brown;
+		}
+		&.green {
+			color: $color-green;
+		}
+	}
+
+	#go-realpart-title {
+		margin-top: .5rem;
+	}
+
+	#go-realpart-info {
+		.info {
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	#bar-bear-campaign {
+		padding: 2rem;
+		border: 2px solid $color-orange;
+	}
+
+	.bar-bear-kirin {
+		width: 100px;
+		height: auto;
+		display: inline-block;
+		padding-right: 15px;
+	}
+
+	.bar-bear-steps {
+		margin-top: 1.5rem;
+		color: $color-blue-dark;
+	}
+
+	.bar-bear-nctuartfest {
+		width: 150px;
+		height: auto;
+	}
+
+	#live-movie {
+		position: relative;
+		height: 400px;
+		.movie-bg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 5;
+			background: url('../images/live-4.png');
+			width: 100%;
+			height: 400px;
+		}
+		.movie-inner {
+			position: relative;
+			z-index: 10;
+			color: $bg-color;
+			padding: 2rem;
+		}
+		.info {
+			margin-top: 2rem;
+			margin-bottom: 1.5rem;
+		}
+		.sub-description {
+			position: absolute;
+			padding: 3rem 2rem;
+			right: 0;
+			top: 0;
+			width: 550px;
+			text-align: right;
+		}
+	}
+
+	#go-movie {
+		.info {
+			font-size: 0.9rem;
+		}
+	}
+
+	#go-goods {
+		.block-title {
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.goods-info {
+		margin-top: .5rem;
+		margin-bottom: 1.5rem;
+		.goods-price {
+			color: $color-green;
+			font-size: 0.875rem;
+		}
+		.goods-name {
+			color: $color-blue-dark;
+			font-size: 0.875rem;
+		}
+	}
+
+	.preorder {
+		margin: 1.5rem 0;
+		.preorder-button {
+			float: left;
+			background: $color-pink;
+			padding: .5rem 1.25rem;
+			font-weight: 700;
+			letter-spacing: 5px;
+			border-radius: .25rem;
+			color: $bg-color;
+			transition: 0.07s;
+			&:hover {
+				background: lighten($color-pink, 10);
+				text-decoration: none;
+			}
+		}
+		.preorder-info {
+			margin-left: 1.5rem;
+			line-height: 1.4rem;
+			float: left;
+		}
+	}
+
+	
+
+	.place {
+		display: inline-block;
+		// font-size: 0.875rem;
+		color: $color-orange;
+		&.block {
+			display: block;
+			margin-top: .5rem;
+			margin-bottom: 1rem;
+		}
+		i {
+			margin-right: 0.25rem;
+		}
+	}
+
+}
+
+
 
 

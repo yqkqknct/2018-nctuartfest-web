@@ -1,5 +1,10 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
+.clearfix::before,
+.clearfix::after {
+  flex-basis: 0;
+  order: 1; }
+
 * {
   -webkit-overflow-scrolling: touch; }
 
@@ -12,780 +17,195 @@ html, body {
   background-color: #F3F3F4;
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 1.33px; }
-  @media (min-width: 1440px) {
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 1.33; }
+  @media (min-width: 320px) {
     html, body {
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: 2.66px; } }
+      font-weight: 400;
+      font-size: 16px; } }
 
-.container {
-  max-width: 310px; }
-  @media (min-width: 768px) {
-    .container {
-      max-width: 688px; } }
-  @media (min-width: 1440px) {
-    .container {
-      max-width: 1040px; } }
+img {
+  max-width: 100%; }
 
-@media (min-width: 320px) and (max-width: 767px) {
-  .main-logo {
-    float: right;
-    margin-left: 0px;
-    margin-top: 10px;
-    margin-right: 10px;
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -o-transform: scale(0.6);
-    transform: scale(0.6); } }
-@media (min-width: 768px) {
-  .main-logo {
-    float: left;
-    margin-left: 50px;
-    margin-top: 50px; } }
-
-a {
-  color: #E37224; }
-  a:hover {
-    color: #e98f51;
-    text-decoration: none; }
-
-.header {
+header.fixed-nav {
   position: relative;
-  height: 600px; }
-  @media (min-width: 768px) {
-    .header {
-      height: 648px; } }
-  @media (min-width: 1440px) {
-    .header {
-      height: 848px; } }
-  .header .components .light {
-    position: absolute;
-    top: 0;
-    left: 20px;
-    background: url("../images/common/header-light.png"); }
-    @media (min-width: 768px) {
-      .header .components .light {
-        top: -10px;
-        left: 120px; } }
-    @media (min-width: 1440px) {
-      .header .components .light {
-        top: 0;
-        left: 99px; } }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .header .components .light {
-        width: 29px;
-        height: 109px;
-        background-size: 29px 109px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
-      .header .components .light {
-        width: 48px;
-        height: 184px;
-        background-size: 48px 184px; } }
-    @media (min-width: 1440px) {
-      .header .components .light {
-        width: 81px;
-        height: 310px;
-        background-size: 81px 310px; } }
-  .header .components .pipe {
-    position: absolute;
-    top: 0;
-    left: 74px;
-    background: url("../images/common/header-pipe.png"); }
-    @media (min-width: 768px) {
-      .header .components .pipe {
-        top: 0;
-        left: 246px; } }
-    @media (min-width: 1440px) {
-      .header .components .pipe {
-        top: 0;
-        left: 206px; } }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .header .components .pipe {
-        width: 176px;
-        height: 85px;
-        background-size: 176px 85px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
-      .header .components .pipe {
-        width: 369px;
-        height: 177px;
-        background-size: 369px 177px; } }
-    @media (min-width: 1440px) {
-      .header .components .pipe {
-        width: 591px;
-        height: 284px;
-        background-size: 591px 284px; } }
-  .header .info {
-    position: absolute;
-    top: 122px;
-    left: 5px;
-    color: #0C273A; }
-    @media (min-width: 768px) {
-      .header .info {
-        top: 276px;
-        left: 79px; } }
-    @media (min-width: 1440px) {
-      .header .info {
-        top: 379px;
-        left: 70px; } }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .header .info {
-        text-align: center;
-        width: 300px;
-        margin: auto; } }
-    .header .info .year {
-      font-family: "Poiret One", cursive;
-      line-height: 28px;
-      letter-spacing: 1.33;
-      font-size: 24px;
-      margin-bottom: 20px; }
-      @media (min-width: 320px) and (max-width: 767px) {
-        .header .info .year {
-          font-size: 16px;
-          line-height: 18px;
-          letter-spacing: 0.9; } }
-    .header .info .topic {
-      background: url("../images/common/nctuartfest.png"); }
-      @media (min-width: 320px) and (max-width: 767px) {
-        .header .info .topic {
-          margin: 0 auto; } }
-      @media (min-width: 320px) and (max-width: 767px) {
-        .header .info .topic {
-          width: 190px;
-          height: 37px;
-          background-size: 190px 37px; } }
-      @media (min-width: 768px) and (max-width: 1439px) {
-        .header .info .topic {
-          width: 222px;
-          height: 44px;
-          background-size: 222px 44px; } }
-      @media (min-width: 1440px) {
-        .header .info .topic {
-          width: 317px;
-          height: 63px;
-          background-size: 317px 63px; } }
-    .header .info .topic-english {
-      margin-top: 6px;
-      font-family: "Poiret One", cursive;
-      font-size: 20px;
-      letter-spacing: 1.11px;
-      line-height: 23px;
-      margin-bottom: 30px; }
-      @media (min-width: 768px) {
-        .header .info .topic-english {
-          font-size: 24px;
-          letter-spacing: 1.33px;
-          line-height: 28px; } }
-      @media (min-width: 1440px) {
-        .header .info .topic-english {
-          font-size: 36px;
-          letter-spacing: 2px;
-          line-height: 42px; } }
-    .header .info .date {
-      font-family: "Poiret One", cursive;
-      font-size: 16px;
-      letter-spacing: 0.8px;
-      line-height: 18px; }
-      @media (min-width: 768px) {
-        .header .info .date {
-          font-size: 20px;
-          letter-spacing: 1.11px;
-          line-height: 1.16; } }
-      @media (min-width: 1440px) {
-        .header .info .date {
-          font-size: 24px;
-          letter-spacing: 1.33px; } }
-    .header .info .date-line {
+  padding: 2rem 0;
+  text-align: center; }
+  header.fixed-nav nav {
+    text-align: center; }
+    header.fixed-nav nav .nav-item {
       display: inline-block;
-      border-bottom: 1px solid #0C273A;
-      height: 1px;
-      width: 30px;
-      margin: 8px 5px; }
-      @media (min-width: 768px) {
-        .header .info .date-line {
-          width: 40px; } }
-      @media (min-width: 1440px) {
-        .header .info .date-line {
-          width: 49px; } }
-    .header .info .place {
-      font-weight: 300;
-      font-family: "Noto Sans TC", sans-serif;
-      font-size: 16px;
-      letter-spacing: 5px;
-      line-height: 24px; }
-      @media (min-width: 768px) {
-        .header .info .place {
-          font-size: 20px;
-          letter-spacing: 6.25px;
-          line-height: 1.16; } }
-      @media (min-width: 1440px) {
-        .header .info .place {
-          font-size: 24px;
-          letter-spacing: 7.5px; } }
-  .header .sketch {
-    position: absolute;
-    top: 330px;
-    left: 19px;
-    background: url("../images/common/header-sketch.png"); }
-    @media (min-width: 768px) {
-      .header .sketch {
-        top: 230px;
-        left: 363px; } }
-    @media (min-width: 1440px) {
-      .header .sketch {
-        top: 200px;
-        left: 489px; } }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .header .sketch {
-        width: 267px;
-        height: 261px;
-        background-size: 267px 261px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
-      .header .sketch {
-        width: 298px;
-        height: 291px;
-        background-size: 298px 291px; } }
-    @media (min-width: 1440px) {
-      .header .sketch {
-        width: 533px;
-        height: 546px;
-        background-size: 533px 546px; } }
-
-.topic {
-  position: relative;
-  height: 800px; }
-  @media (min-width: 768px) {
-    .topic {
-      height: 435px; } }
-  @media (min-width: 1440px) {
-    .topic {
-      height: 720px; } }
-  @media (min-width: 768px) {
-    .topic .topic-sketch {
-      position: absolute;
-      left: -53px;
-      top: 0; } }
-  @media (min-width: 1440px) {
-    .topic .topic-sketch {
-      left: -216px;
-      top: 0px; } }
-  @media (min-width: 320px) and (max-width: 767px) {
-    .topic .topic-sketch {
-      background: url("../images/mobile/topic-sketch.png"); } }
-  @media (min-width: 768px) and (max-width: 1439px) {
-    .topic .topic-sketch {
-      background: url("../images/tablet/topic-sketch.png"); } }
-  @media (min-width: 1440px) {
-    .topic .topic-sketch {
-      background: url("../images/desktop/topic-sketch.png"); } }
-  @media (min-width: 320px) and (max-width: 767px) {
-    .topic .topic-sketch {
-      width: 289px;
-      height: 186px;
-      background-size: 289px 186px; } }
-  @media (min-width: 768px) and (max-width: 1439px) {
-    .topic .topic-sketch {
-      width: 142px;
-      height: 333px;
-      background-size: 142px 333px; } }
-  @media (min-width: 1440px) {
-    .topic .topic-sketch {
-      width: 419px;
-      height: 556px;
-      background-size: 419px 556px; } }
-  .topic .topic-english-1 {
-    color: #0C273A;
-    font-weight: 200;
-    letter-spacing: 10px; }
-  .topic .robot {
-    position: absolute;
-    background: url("../images/common/topic-robot.png"); }
-    @media (min-width: 1440px) {
-      .topic .robot {
-        top: 331px;
-        left: 52px; } }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .topic .robot {
-        width: 58px;
-        height: 162px;
-        background-size: 58px 162px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
-      .topic .robot {
-        width: 76px;
-        height: 212px;
-        background-size: 76px 212px; } }
-    @media (min-width: 1440px) {
-      .topic .robot {
-        width: 110px;
-        height: 307px;
-        background-size: 110px 307px; } }
-  .topic .intro {
-    position: relative;
-    z-index: 10; }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .topic .intro {
-        margin-left: 52px;
-        margin-top: 40px; } }
-    @media (min-width: 768px) {
-      .topic .intro {
-        position: absolute;
-        width: 280px;
-        left: 388px;
-        top: 12px; } }
-    @media (min-width: 1440px) {
-      .topic .intro {
-        width: 424px;
-        position: absolute;
-        top: 173px;
-        left: 286px; } }
-    .topic .intro .topic-english-2 {
-      font-family: "Poiret One", cursive;
-      font-weight: 100;
-      margin-bottom: 50px;
-      color: #0C273A;
-      font-size: 30px;
-      letter-spacing: 5px;
-      line-height: 35px; }
-      @media (min-width: 768px) {
-        .topic .intro .topic-english-2 {
-          line-height: 49px;
-          font-size: 42px;
-          letter-spacing: 6px;
-          margin-left: -20px; } }
-      @media (min-width: 1440px) {
-        .topic .intro .topic-english-2 {
-          line-height: 70px;
-          font-size: 60px;
-          letter-spacing: 11px;
-          margin-left: -27px; } }
-    .topic .intro .intro-content {
-      font-size: 14px;
-      line-height: 20px;
-      letter-spacing: 1.67px;
-      color: #0C273A;
-      font-family: "Noto Sans TC", sans-serif;
-      font-weight: 400; }
-      @media (min-width: 320px) and (max-width: 767px) {
-        .topic .intro .intro-content {
-          margin-top: 260px;
-          width: 260px;
-          margin-left: -35px; } }
-      @media (min-width: 768px) {
-        .topic .intro .intro-content {
-          font-size: 16px;
-          line-height: 24px;
-          letter-spacing: 1.33px; } }
-      @media (min-width: 1440px) {
-        .topic .intro .intro-content {
-          font-size: 20px;
-          line-height: 36px;
-          letter-spacing: 1.67px; } }
-    .topic .intro .medium-articles {
-      display: inline-block;
-      background: #0C273A;
-      color: white;
-      padding: 6px 18px;
-      border-radius: 2px;
-      font-size: 16px;
-      margin-top: 12px; }
-      @media (min-width: 320px) and (max-width: 767px) {
-        .topic .intro .medium-articles {
-          font-size: 14px;
-          letter-spacing: 2px;
-          background: transparent;
-          color: #E37224;
-          border-bottom: 1px solid #E37224;
-          padding: 0;
-          margin-top: 24px;
-          margin-left: 20px; } }
-      .topic .intro .medium-articles:hover {
+      padding: 0 2.5rem; }
+      header.fixed-nav nav .nav-item a {
+        font-size: 14px;
+        color: #0C273A;
         text-decoration: none; }
-  .topic .robot {
-    position: absolute;
-    z-index: 9;
-    top: 366px;
-    left: 23px; }
-    @media (min-width: 768px) {
-      .topic .robot {
-        top: 151px;
-        left: 232px; } }
-    @media (min-width: 1440px) {
-      .topic .robot {
-        top: 331px;
-        left: 52px; } }
-  .topic .title {
-    background: url("../images/common/topic-title.png");
-    position: absolute; }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .topic .title {
-        width: 0px;
-        height: 0px;
-        background-size: 0px 0px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
-      .topic .title {
-        width: 137px;
-        height: 32px;
-        background-size: 137px 32px; } }
-    @media (min-width: 1440px) {
-      .topic .title {
-        width: 202px;
-        height: 47px;
-        background-size: 202px 47px; } }
-    @media (min-width: 768px) {
-      .topic .title {
-        top: 37px;
-        left: 164px; } }
-    @media (min-width: 1440px) {
-      .topic .title {
-        top: 111px;
-        left: 804px; } }
-  .topic .products {
-    position: absolute;
-    z-index: 8;
-    background: url("../images/common/topic-products.png");
-    top: 248px;
-    left: 65px; }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .topic .products {
-        width: 270px;
-        height: 270px;
-        background-size: 270px 270px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
-      .topic .products {
-        width: 186px;
-        height: 186px;
-        background-size: 186px 186px; } }
-    @media (min-width: 1440px) {
-      .topic .products {
-        width: 344px;
-        height: 344px;
-        background-size: 344px 344px; } }
-    @media (min-width: 768px) {
-      .topic .products {
-        top: 113px;
-        left: 71px; } }
-    @media (min-width: 1440px) {
-      .topic .products {
-        top: 214px;
-        left: 751px; } }
-@media (min-width: 320px) and (max-width: 767px) and (min-width: 320px) and (max-width: 767px) {
-  .topic .products {
-    background: url("../images/mobile/topic-products.png"); } }
-@media (min-width: 320px) and (max-width: 767px) and (min-width: 768px) and (max-width: 1439px) {
-  .topic .products {
-    background: url("../images/tablet/topic-products.png"); } }
-@media (min-width: 320px) and (max-width: 767px) and (min-width: 1440px) {
-  .topic .products {
-    background: url("../images/desktop/topic-products.png"); } }
-@media (min-width: 320px) and (max-width: 767px) and (min-width: 320px) and (max-width: 767px) {
-  .topic .products {
-    width: 270px;
-    height: 270px;
-    background-size: 270px 270px; } }
-@media (min-width: 320px) and (max-width: 767px) and (min-width: 768px) and (max-width: 1439px) {
-  .topic .products {
-    width: 186px;
-    height: 186px;
-    background-size: 186px 186px; } }
-@media (min-width: 320px) and (max-width: 767px) and (min-width: 1440px) {
-  .topic .products {
-    width: 344px;
-    height: 344px;
-    background-size: 344px 344px; } }
+        header.fixed-nav nav .nav-item a:hover {
+          color: #E37224; }
 
-.projects {
+#topic {
+  margin-top: 4rem;
   position: relative; }
-  .projects .title {
-    margin-bottom: 5rem;
-    margin-top: 1rem; }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .projects .title {
-        background: url("../images/mobile/project-title.png"); } }
-    @media (min-width: 768px) and (max-width: 1439px) {
-      .projects .title {
-        background: url("../images/tablet/project-title.png"); } }
+  #topic .topic-content .date {
+    font-family: "Poiret One", cursive;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    line-height: 18px; }
     @media (min-width: 1440px) {
-      .projects .title {
-        background: url("../images/desktop/project-title.png"); } }
-    @media (min-width: 320px) and (max-width: 767px) {
-      .projects .title {
-        width: 279px;
-        height: 163px;
-        background-size: 279px 163px; } }
-    @media (min-width: 768px) and (max-width: 1439px) {
-      .projects .title {
-        width: 329px;
-        height: 154px;
-        background-size: 329px 154px; } }
-    @media (min-width: 1440px) {
-      .projects .title {
-        width: 620px;
-        height: 315px;
-        background-size: 620px 315px; } }
-  .projects .item {
-    margin-bottom: 30px; }
-  .projects .project-desc {
-    font-size: 14px;
-    letter-spacing: 1.9px;
-    line-height: 20px; }
-    @media (min-width: 1440px) {
-      .projects .project-desc {
+      #topic .topic-content .date {
         font-size: 16px;
-        letter-spacing: 2.22px;
-        line-height: 24px; } }
-  .projects .project-title {
-    font-weight: 300;
-    font-size: 20px;
-    letter-spacing: 2.78px;
-    line-height: 28px;
-    margin-top: 12px;
-    margin-bottom: 12px; }
+        letter-spacing: 1.33px; } }
+  #topic .topic-content .date-line {
+    display: inline-block;
+    border-bottom: 1px solid #0C273A;
+    height: 1px;
+    width: 30px;
+    margin: 8px 5px; }
     @media (min-width: 768px) {
-      .projects .project-title {
-        margin-top: 3px; } }
+      #topic .topic-content .date-line {
+        width: 40px; } }
     @media (min-width: 1440px) {
-      .projects .project-title {
-        font-size: 24px;
-        letter-spacing: 3.33px;
-        line-height: 33px;
-        margin-top: 6px;
-        margin-bottom: 24px; } }
+      #topic .topic-content .date-line {
+        width: 49px; } }
+  #topic .topic-content .place {
+    display: block;
+    font-weight: 300;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 16px;
+    letter-spacing: 5px;
+    line-height: 24px; }
+    @media (min-width: 1440px) {
+      #topic .topic-content .place {
+        font-size: 16px;
+        letter-spacing: 7.5px; } }
+  #topic .topic-content .year {
+    font-family: "Poiret One", cursive;
+    font-size: 1.25rem;
+    margin-bottom: 1rem; }
+  #topic .topic-content .topic-tag {
+    margin-top: 3rem;
+    color: #AA967D; }
+  #topic .topic-content .topic {
+    width: 233px;
+    height: auto; }
+  #topic .topic-content .topic-english {
+    font-family: "Poiret One", cursive;
+    font-size: 1.5rem;
+    margin-top: .75rem;
+    margin-bottom: 3rem;
+    line-height: 21px;
+    letter-spacing: 1.5px; }
+  #topic .topic-content .topic-slogan {
+    margin: 0 auto; }
+  #topic .components .h-gear {
+    position: absolute;
+    left: 5vh;
+    top: 20vh;
+    z-index: 10;
+    width: 116px; }
+  #topic .components .h-gear-red {
+    position: absolute;
+    right: 20vh;
+    top: 80vh;
+    z-index: 10;
+    width: 107px; }
+  #topic .components .h-l {
+    position: absolute;
+    right: 35vh;
+    top: 65vh;
+    z-index: 10;
+    width: 123px; }
+  #topic .components .h-line {
+    position: absolute;
+    left: 5vh;
+    top: 40vh;
+    z-index: 10;
+    width: 44px; }
+  #topic .components .h-robot {
+    position: absolute;
+    left: 30vh;
+    top: 70vh;
+    z-index: 10;
+    width: 95px; }
+  #topic .components .h-t {
+    position: absolute;
+    left: 35vh;
+    top: 15vh;
+    z-index: 10;
+    width: 139px; }
+  #topic .components .h-oil {
+    position: absolute;
+    right: 35vh;
+    top: 20vh;
+    z-index: 10;
+    width: 67px; }
+  #topic .topic-background {
+    width: 100%;
+    object-fit: cover; }
 
-.souvenir .title {
-  margin-top: 70px;
-  margin-bottom: 40px; }
-  @media (min-width: 768px) {
-    .souvenir .title {
-      margin-top: 70px;
-      margin-bottom: 70px; } }
-  @media (min-width: 1440px) {
-    .souvenir .title {
-      margin-top: 112px;
-      margin-bottom: 112px; } }
-  @media (min-width: 320px) and (max-width: 767px) {
-    .souvenir .title {
-      background: url("../images/mobile/product-title.png"); } }
-  @media (min-width: 768px) and (max-width: 1439px) {
-    .souvenir .title {
-      background: url("../images/tablet/product-title.png"); } }
-  @media (min-width: 1440px) {
-    .souvenir .title {
-      background: url("../images/desktop/product-title.png"); } }
-  @media (min-width: 320px) and (max-width: 767px) {
-    .souvenir .title {
-      width: 245px;
-      height: 34px;
-      background-size: 245px 34px; } }
-  @media (min-width: 768px) and (max-width: 1439px) {
-    .souvenir .title {
-      width: 327px;
-      height: 44px;
-      background-size: 327px 44px; } }
-  @media (min-width: 1440px) {
-    .souvenir .title {
-      width: 523px;
-      height: 66px;
-      background-size: 523px 66px; } }
-.souvenir .list .item .product-intro {
-  line-height: 40px;
-  vertical-align: center; }
+#intro {
+  margin-top: 5rem; }
+  #intro .intro-img {
+    margin: 4rem 0; }
+  #intro .intro-title {
+    font-family: "Poiret One", cursive;
+    font-size: 2rem;
+    margin-bottom: 1.5rem; }
+  #intro .intro-content {
+    color: #AA967D; }
+    #intro .intro-content p {
+      margin-bottom: 1.5rem; }
 
-@media (min-width: 320px) and (max-width: 767px) {
-  .support .title {
-    background: url("../images/mobile/support-title.png"); } }
-@media (min-width: 768px) and (max-width: 1439px) {
-  .support .title {
-    background: url("../images/tablet/support-title.png"); } }
-@media (min-width: 1440px) {
-  .support .title {
-    background: url("../images/desktop/support-title.png"); } }
-@media (min-width: 320px) and (max-width: 767px) {
-  .support .title {
-    width: 164px;
-    height: 55px;
-    background-size: 164px 55px; } }
-@media (min-width: 768px) and (max-width: 1439px) {
-  .support .title {
-    width: 181px;
-    height: 68px;
-    background-size: 181px 68px; } }
-@media (min-width: 1440px) {
-  .support .title {
-    width: 282px;
-    height: 109px;
-    background-size: 282px 109px; } }
-.support .slogo {
-  display: inline-block;
-  margin: 15px 20px 15px 0; }
-.support .diamond {
-  background: url("../images/common/support-a.png");
-  background-size: cover;
-  width: 336px;
-  height: 50px;
-  -webkit-transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  -o-transform-origin: 0 0;
-  transform-origin: 0 0; }
-  @media (min-width: 320px) and (max-width: 767px) {
-    .support .diamond {
-      -webkit-transform: scale(0.4);
-      -moz-transform: scale(0.4);
-      -ms-transform: scale(0.4);
-      -o-transform: scale(0.4);
-      transform: scale(0.4); } }
-  @media (min-width: 768px) {
-    .support .diamond {
-      -webkit-transform: scale(0.5);
-      -moz-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-      -o-transform: scale(0.5);
-      transform: scale(0.5); } }
-.support .platinum {
-  background: url("../images/common/support-b.png");
-  background-size: cover;
-  width: 336px;
-  height: 50px;
-  -webkit-transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  -o-transform-origin: 0 0;
-  transform-origin: 0 0; }
-  @media (min-width: 320px) and (max-width: 767px) {
-    .support .platinum {
-      -webkit-transform: scale(0.4);
-      -moz-transform: scale(0.4);
-      -ms-transform: scale(0.4);
-      -o-transform: scale(0.4);
-      transform: scale(0.4); } }
-  @media (min-width: 768px) {
-    .support .platinum {
-      -webkit-transform: scale(0.5);
-      -moz-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-      -o-transform: scale(0.5);
-      transform: scale(0.5); } }
-.support .gold {
-  background: url("../images/common/support-c.png");
-  background-size: cover;
-  width: 274px;
-  height: 50px;
-  -webkit-transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  -o-transform-origin: 0 0;
-  transform-origin: 0 0; }
-  @media (min-width: 320px) and (max-width: 767px) {
-    .support .gold {
-      -webkit-transform: scale(0.4);
-      -moz-transform: scale(0.4);
-      -ms-transform: scale(0.4);
-      -o-transform: scale(0.4);
-      transform: scale(0.4); } }
-  @media (min-width: 768px) {
-    .support .gold {
-      -webkit-transform: scale(0.5);
-      -moz-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-      -o-transform: scale(0.5);
-      transform: scale(0.5); } }
+#projects {
+  margin-top: 5rem; }
+  #projects .block-title {
+    margin-top: 1rem;
+    margin-bottom: 2rem; }
+  #projects .project-title {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.125rem; }
+    #projects .project-title a {
+      text-decoration: none;
+      color: #0A2C42; }
+  #projects .project-description {
+    font-size: 0.9rem;
+    color: #AA967D; }
+  #projects .project-info {
+    margin-bottom: 3rem;
+    font-size: 0.9rem;
+    color: #E37224; }
+    #projects .project-info .place {
+      display: block;
+      margin-bottom: 0.5rem; }
 
 footer {
-  margin-top: 70px;
-  margin-bottom: 60px; }
-  footer .sketch {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  color: #313D42; }
+  footer .copyright {
+    margin-top: 2rem;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px; }
-    @media (min-width: 768px) {
-      footer .sketch {
-        padding-top: 70px;
-        background: url("../images/common/footer-sketch.png");
-        background-size: 694px 301px;
-        width: 694px;
-        height: 301px; } }
-    footer .sketch .topic {
-      display: inline-block;
-      width: 137px;
-      height: 24px;
-      vertical-align: sub;
-      background: url("../images/common/nctuartfest.png"); }
-      @media (min-width: 320px) and (max-width: 767px) {
-        footer .sketch .topic {
-          display: block;
-          margin: 0 auto; } }
-      @media (min-width: 320px) and (max-width: 767px) {
-        footer .sketch .topic {
-          width: 137px;
-          height: 24px;
-          background-size: 137px 24px; } }
-      @media (min-width: 768px) and (max-width: 1439px) {
-        footer .sketch .topic {
-          width: 137px;
-          height: 24px;
-          background-size: 137px 24px; } }
-      @media (min-width: 1440px) {
-        footer .sketch .topic {
-          width: 137px;
-          height: 24px;
-          background-size: 137px 24px; } }
-    footer .sketch .date-line {
-      display: inline-block;
-      border-bottom: 1px solid #0C273A;
-      height: 1px;
-      margin: 8px 5px; }
-      @media (min-width: 768px) {
-        footer .sketch .date-line {
-          width: 40px; } }
-      @media (min-width: 1440px) {
-        footer .sketch .date-line {
-          width: 49px; } }
-    footer .sketch .slogan {
-      margin-top: 5px; }
-      @media (min-width: 320px) and (max-width: 767px) {
-        footer .sketch .slogan {
-          font-size: 16px;
-          line-height: 24px;
-          letter-spacing: 2.66px; } }
-    footer .sketch .datetime {
-      font-size: 14px;
-      line-height: 20px;
-      margin-top: 5px; }
-    footer .sketch p {
-      transform: rotate(-1deg); }
-  footer .fb-fan-page {
-    margin-top: 50px; }
-    @media (min-width: 768px) {
-      footer .fb-fan-page {
-        float: left;
-        width: 280px;
-        margin-left: 5%; } }
-    @media (min-width: 1440px) {
-      footer .fb-fan-page {
-        float: left;
-        width: 280px;
-        margin-left: 20%; } }
+    color: #AA967D;
+    letter-spacing: 3px; }
+  footer a {
+    color: #0A2C42;
+    text-decoration: none;
+    transition: .07s; }
+    footer a:hover {
+      text-decoration: none;
+      color: #E37224; }
+  footer .slogo {
+    display: inline-block;
+    margin: 15px 20px 15px 0; }
   footer .organizer {
-    margin-top: 50px; }
-    @media (min-width: 768px) {
-      footer .organizer {
-        float: left;
-        width: 40%;
-        margin-left: 20px; } }
-    @media (min-width: 1440px) {
-      footer .organizer {
-        float: left;
-        width: 30%;
-        margin-left: 20px; } }
-  footer .footer-ai {
-    font-family: "Poiret One", cursive;
-    font-size: 24px;
-    letter-spacing: 3.33px;
-    line-height: 28px; }
+    margin: 0;
+    padding: 0; }
+    footer .organizer li {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
 
 .page-title {
   font-family: "Poiret One", cursive, "Noto Sans TC", sans-serif;
@@ -797,5 +217,161 @@ footer {
 
 .page-featured-image {
   margin-bottom: 2rem; }
+
+#stories {
+  margin-top: 4rem; }
+  #stories h1 {
+    font-size: 2rem;
+    color: #0A2C42;
+    margin-bottom: 2rem; }
+  #stories h2 {
+    text-align: center;
+    font-size: 1rem;
+    color: #E37224;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    margin-top: 3rem; }
+
+#go .date {
+  font-family: "Poiret One", cursive;
+  color: #0A2C42;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: .5rem; }
+#go .go-title {
+  color: #E37224;
+  margin-bottom: 1.5rem; }
+#go .hashtags {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: #AA967D; }
+#go .slogan {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px; }
+#go .space {
+  padding: 1rem 0;
+  margin: .5rem 0 .5rem 0; }
+#go .img-note {
+  font-size: 0.75rem;
+  color: #AA967D;
+  letter-spacing: 2px; }
+#go #go-movie-forum .block-title {
+  margin-top: .5rem; }
+#go #go-movie-forum .forum-context {
+  font-size: 0.9rem; }
+#go .block-title {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem 0; }
+  #go .block-title.green {
+    color: #7FA0A6; }
+#go .sub-title {
+  font-size: 0.9rem;
+  margin-bottom: 1rem; }
+  #go .sub-title.green {
+    color: #7FA0A6; }
+#go .item-title {
+  font-size: 1rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem; }
+#go .sub-description {
+  font-size: 0.825rem;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: #AA967D; }
+#go .info-name {
+  font-size: 0.875rem;
+  color: #0A2C42;
+  letter-spacing: 3px;
+  margin: 1rem 0; }
+  #go .info-name.brown {
+    color: #AA967D; }
+  #go .info-name.green {
+    color: #7FA0A6; }
+#go #go-realpart-title {
+  margin-top: .5rem; }
+#go #go-realpart-info .info {
+  margin-bottom: 1.5rem; }
+#go #bar-bear-campaign {
+  padding: 2rem;
+  border: 2px solid #E37224; }
+#go .bar-bear-kirin {
+  width: 100px;
+  height: auto;
+  display: inline-block;
+  padding-right: 15px; }
+#go .bar-bear-steps {
+  margin-top: 1.5rem;
+  color: #0A2C42; }
+#go .bar-bear-nctuartfest {
+  width: 150px;
+  height: auto; }
+#go #live-movie {
+  position: relative;
+  height: 400px; }
+  #go #live-movie .movie-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background: url("../images/live-4.png");
+    width: 100%;
+    height: 400px; }
+  #go #live-movie .movie-inner {
+    position: relative;
+    z-index: 10;
+    color: #F3F3F4;
+    padding: 2rem; }
+  #go #live-movie .info {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem; }
+  #go #live-movie .sub-description {
+    position: absolute;
+    padding: 3rem 2rem;
+    right: 0;
+    top: 0;
+    width: 550px;
+    text-align: right; }
+#go #go-movie .info {
+  font-size: 0.9rem; }
+#go #go-goods .block-title {
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+#go .goods-info {
+  margin-top: .5rem;
+  margin-bottom: 1.5rem; }
+  #go .goods-info .goods-price {
+    color: #7FA0A6;
+    font-size: 0.875rem; }
+  #go .goods-info .goods-name {
+    color: #0A2C42;
+    font-size: 0.875rem; }
+#go .preorder {
+  margin: 1.5rem 0; }
+  #go .preorder .preorder-button {
+    float: left;
+    background: #DC7376;
+    padding: .5rem 1.25rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    border-radius: .25rem;
+    color: #F3F3F4;
+    transition: 0.07s; }
+    #go .preorder .preorder-button:hover {
+      background: #e69c9e;
+      text-decoration: none; }
+  #go .preorder .preorder-info {
+    margin-left: 1.5rem;
+    line-height: 1.4rem;
+    float: left; }
+#go .place {
+  display: inline-block;
+  color: #E37224; }
+  #go .place.block {
+    display: block;
+    margin-top: .5rem;
+    margin-bottom: 1rem; }
+  #go .place i {
+    margin-right: 0.25rem; }
 
 /*# sourceMappingURL=app.css.map */
