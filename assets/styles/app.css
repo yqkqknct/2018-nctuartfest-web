@@ -186,72 +186,80 @@ header.fixed-nav {
     object-fit: cover; }
 
 #timeline {
-  overflow-x: scroll;
-  -webkit-touch-overflow: scroll;
-  position: relative;
-  width: 1260px;
-  max-width: 1260px;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-  padding: 0px;
-  display: grid;
-  grid-template-columns: repeat(2, auto) 220px 100px 100px 100px auto;
-  grid-template-rows: 50px 50px 50px;
-  align-items: center;
-  text-align: center; }
-  #timeline .highlight-area {
-    z-index: 1;
-    position: absolute;
-    grid-row: 1 / 4;
-    grid-column: 3 / 7;
-    width: 100%;
-    height: 100%;
-    background: #DF6621;
-    color: white; }
-  #timeline .axis {
-    z-index: 2;
-    position: absolute;
-    grid-row: 2 / 2;
-    grid-column: 1 / end;
-    height: 32px;
-    width: 100%;
-    background: #A08B72; }
-  #timeline .date {
-    z-index: 3;
-    grid-row: 1;
-    align-self: end;
-    color: #DF6621;
-    font-size: 1.5rem; }
-  #timeline .date.reverse {
-    color: white; }
-  #timeline .name {
-    grid-row: 2;
-    z-index: 3;
-    background: #A08B72;
-    line-height: 32px;
-    color: white;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem; }
-  #timeline .name.feature {
-    background-color: #2B353A;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    border-radius: 3px; }
-  #timeline .name.lecture {
-    background-color: #74969C;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    border-radius: 3px; }
-  #timeline .slogan {
-    z-index: 3;
-    grid-row: 3;
-    grid-column: 3/7;
-    color: white;
-    letter-spacing: 5px; }
-  #timeline .intro {
-    grid-row: 4;
-    grid-column: 3/7;
-    color: #DF6621; }
+  margin-top: 1rem;
+  margin-bottom: 6rem; }
+  #timeline .scroll {
+    overflow-x: scroll;
+    -webkit-touch-overflow: scroll;
+    width: 100%; }
+  #timeline .block-title {
+    margin-top: 2rem;
+    font-family: "Poiret One", cursive; }
+  #timeline .inner {
+    position: relative;
+    width: 1120px;
+    max-width: 1120px;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(2, auto) 220px 100px 100px 100px auto;
+    grid-template-rows: 50px 50px 50px;
+    align-items: center;
+    text-align: center;
+    font-weight: 300; }
+    #timeline .inner .highlight-area {
+      z-index: 1;
+      position: absolute;
+      grid-row: 1 / 4;
+      grid-column: 3 / 7;
+      width: 100%;
+      height: 100%;
+      background: #DF6621;
+      color: white; }
+    #timeline .inner .axis {
+      z-index: 2;
+      position: absolute;
+      grid-row: 2 / 2;
+      grid-column: 1 / end;
+      height: 32px;
+      width: 100%;
+      background: #A08B72; }
+    #timeline .inner .date {
+      z-index: 3;
+      grid-row: 1;
+      align-self: end;
+      color: #DF6621;
+      font-size: 1.5rem;
+      font-family: "Poiret One", cursive; }
+    #timeline .inner .date.reverse {
+      color: white; }
+    #timeline .inner .name {
+      grid-row: 2;
+      z-index: 3;
+      background: #A08B72;
+      line-height: 32px;
+      color: white;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem; }
+    #timeline .inner .name.feature {
+      background-color: #2B353A;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      border-radius: 3px; }
+    #timeline .inner .name.lecture {
+      background-color: #74969C;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+      border-radius: 3px; }
+    #timeline .inner .slogan {
+      z-index: 3;
+      grid-row: 3;
+      grid-column: 3/7;
+      color: white;
+      letter-spacing: 5px; }
+    #timeline .inner .intro {
+      grid-row: 4;
+      grid-column: 3/7;
+      color: #DF6621; }
 
 #intro {
   margin-top: 1rem; }
@@ -269,12 +277,13 @@ header.fixed-nav {
     #intro .intro-content p {
       margin-bottom: 1.5rem; }
 
+.block-title {
+  line-height: 1.7;
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+
 #projects {
   margin-top: 1rem; }
-  #projects .block-title {
-    line-height: 1.7;
-    margin-top: 1rem;
-    margin-bottom: 2rem; }
   @media (min-width: 576px) {
     #projects {
       margin-top: 4rem; } }

@@ -318,213 +318,104 @@ header.fixed-nav {
 			}
 		}
 
-<<<<<<< HEAD
+
+
 #timeline {
-	overflow-x: scroll;
-	-webkit-touch-overflow: scroll;
-	position: relative;
-	width: 1260px;
-	max-width: 1260px;
 	
-	margin-top: 6rem;
-	margin-bottom: 6rem;
-	padding: 0px;
-	display: grid;
-	grid-template-columns: repeat(2, auto) 220px 100px 100px 100px auto;
-	grid-template-rows: 50px 50px 50px;
-	align-items: center;
-	text-align: center;
-
-	.highlight-area{
-		z-index: 1;
-		position: absolute;
-		grid-row: 1 / 4;
-		grid-column: 3 / 7;	
+	margin-top: 1rem;
+	.scroll	{
+		overflow-x: scroll;
+		-webkit-touch-overflow: scroll;
 		width: 100%;
-		height: 100%;
-		background: #DF6621;
-		color: white;
 	}
-	.axis {
-		z-index: 2;
-		position: absolute;
-		grid-row: 2 / 2;	
-		grid-column: 1 / end;
-		height: 32px;
-		width: 100%;	
-		background: #A08B72;
+	.block-title {
+		margin-top: 2rem;
+		font-family: $font-ai;
 	}
+	margin-bottom: 6rem;
+	.inner {
+		position: relative;
+		width: 1120px;
+		max-width: 1120px;
+		
+		
+		padding: 0px;
+		display: grid;
+		grid-template-columns: repeat(2, auto) 220px 100px 100px 100px auto;
+		grid-template-rows: 50px 50px 50px;
+		align-items: center;
+		text-align: center;
+		font-weight: 300;
+		.highlight-area{
+			z-index: 1;
+			position: absolute;
+			grid-row: 1 / 4;
+			grid-column: 3 / 7;	
+			width: 100%;
+			height: 100%;
+			background: #DF6621;
+			color: white;
+		}
+		.axis {
+			z-index: 2;
+			position: absolute;
+			grid-row: 2 / 2;	
+			grid-column: 1 / end;
+			height: 32px;
+			width: 100%;	
+			background: #A08B72;
+		}
 
-	.date{ 
-		z-index: 3;
-		grid-row: 1;
-		align-self: end;
-		color: #DF6621;
-		font-size: 1.5rem; 
-	}
-	.date.reverse{ color: white}
+		.date{ 
+			z-index: 3;
+			grid-row: 1;
+			align-self: end;
+			color: #DF6621;
+			font-size: 1.5rem; 
+			font-family: $font-ai;
+		}
+		.date.reverse{ color: white}
 
-	.name{ 
-		grid-row: 2;
-		z-index: 3;
-		background: #A08B72;
-		line-height: 32px;
-		color: white;
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
+		.name{ 
+			grid-row: 2;
+			z-index: 3;
+			background: #A08B72;
+			line-height: 32px;
+			color: white;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+
+		}
+		.name.feature{
+			background-color: #2B353A;
+			padding-top: 0.3rem;
+			padding-bottom: 0.3rem;
+
+			border-radius: 3px;
+		}
+		.name.lecture{
+			background-color: #74969C;
+			padding-top: 0.3rem;
+			padding-bottom: 0.3rem;
+			border-radius: 3px;
+		}
+
+		.slogan{
+			z-index: 3;
+			grid-row: 3;
+			grid-column: 3/7;
+			color: white;
+			letter-spacing: 5px;
+		}
+		.intro{
+			grid-row: 4;
+			grid-column: 3/7;
+			color: #DF6621;
+		}
 
 	}
-	.name.feature{
-		background-color: #2B353A;
-		padding-top: 0.3rem;
-		padding-bottom: 0.3rem;
-
-		border-radius: 3px;
-	}
-	.name.lecture{
-		background-color: #74969C;
-		padding-top: 0.3rem;
-		padding-bottom: 0.3rem;
-		border-radius: 3px;
-	}
-
-	.slogan{
-		z-index: 3;
-		grid-row: 3;
-		grid-column: 3/7;
-		color: white;
-		letter-spacing: 5px;
-	}
-	.intro{
-		grid-row: 4;
-		grid-column: 3/7;
-		color: #DF6621;
-	}
-
-
 }
-=======
-// .header {
-// 	position: relative;
-// 	height: 600px;
-// 	@include breakpoint($device-md-up) { height: 648px; }
-// 	@include breakpoint($device-xl-up) { height: 848px; }
 
-// 	.info {
-// 		position: absolute;
-// 		top: 122px;
-// 		left: 5px;	
-// 		@include breakpoint($device-md-up) {
-// 			top: 276px;
-// 			left: 79px;	
-// 		}
-// 		@include breakpoint($device-xl-up) {
-// 			top: 379px;
-// 			left: 70px;
-// 		}
-// 		color: $theme-color;
-// 		@include breakpoint($device-xs-only) {
-// 			text-align: center;
-// 			width: 300px;
-// 			margin: auto;
-// 		}
-// 		.year {
-// 			font-family: $font-ai;
-// 			line-height: 28px;
-// 			letter-spacing: 1.33;
-// 			font-size: 24px;
-// 			margin-bottom: 20px;
-// 			@include breakpoint($device-xs-only) {
-// 				font-size: 16px;
-// 				line-height: 18px;
-// 				letter-spacing: 0.9;
-// 			}
-// 		}
-// 		.topic {
-// 			@include breakpoint($device-xs-only) {
-// 				margin: 0 auto;
-// 			}
-// 			@include common-image('nctuartfest', 190px, 37px, 222px, 44px, 317px, 63px);
-// 		}
-// 		.topic-english {
-// 			margin-top: 6px;
-// 			font-family: $font-ai;
-// 			font-size: 20px;
-// 			letter-spacing: 1.11px;
-// 			line-height: 23px;
-// 			margin-bottom: 30px;
-// 			@include breakpoint($device-md-up) {
-// 				font-size: 24px;
-// 				letter-spacing: 1.33px;
-// 				line-height: 28px;
-// 			}
-// 			@include breakpoint($device-xl-up) {
-// 				font-size: 36px;
-// 				letter-spacing: 2px;
-// 				line-height: 42px;
-// 			}
-// 		}
-// 		.date {
-// 			font-family: $font-ai;
-// 			font-size: 16px;
-// 			letter-spacing: 0.8px;
-// 			line-height: 18px;
-// 			@include breakpoint($device-md-up) {
-// 				font-size: 20px;
-// 				letter-spacing: 1.11px;
-// 				line-height: 1.16;
-// 			}
-// 			@include breakpoint($device-xl-up) {
-// 				font-size: 24px;
-// 				letter-spacing: 1.33px;
-// 			}
-// 		}
-// 		.date-line {
-// 		    display: inline-block;
-// 		    border-bottom: 1px solid #0C273A;
-// 		    height: 1px;
-// 		    width: 30px;
-// 		    @include breakpoint($device-md-up) {
-// 		    	width: 40px;
-// 			}
-// 			@include breakpoint($device-xl-up) {
-// 				width: 49px;
-// 			}
-// 		    margin: 8px 5px;
-// 		}
-// 		.place {
-// 			font-weight: 300;
-// 			font-family: $font-noto;
-// 			font-size: 16px;
-// 			letter-spacing: 5px;
-// 			line-height: 24px;
-// 			@include breakpoint($device-md-up) {
-// 				font-size: 20px;
-// 				letter-spacing: 6.25px;
-// 				line-height: 1.16;
-// 			}
-// 			@include breakpoint($device-xl-up) {
-// 				font-size: 24px;
-// 				letter-spacing: 7.5px;
-// 			}
-// 		}
-// 	}
-// 	.sketch {
-// 		position: absolute;
-// 		top: 330px;
-// 			left: 19px;
-// 		@include breakpoint($device-md-up) {
-// 			top: 230px;
-// 			left: 363px;
-// 		}
-// 		@include breakpoint($device-xl-up) {
-// 			top: 200px;
-// 			left: 489px;
-// 		}
-// 		@include common-image('header-sketch', 267px, 261px, 298px, 291px, 533px, 546px);
-// 	}
-// }
->>>>>>> e09a5bf5aebad54a1ee4a72a8595461fcf981c12
 
 #intro {
 
@@ -552,16 +443,16 @@ header.fixed-nav {
 	}
 
 }
-
-
-#projects {
-
-	.block-title {
+.block-title {
 		line-height: 1.7;
 		margin-top: 1rem;
 		margin-bottom: 2rem;
 	}
 
+
+#projects {
+
+	
 	margin-top: 1rem;
 	@include breakpoint($xs) {
 		margin-top: 4rem;
