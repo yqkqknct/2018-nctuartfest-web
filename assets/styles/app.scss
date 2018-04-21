@@ -39,16 +39,16 @@ $font-context:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
 
 .clearfix::before,
 .clearfix::after {
-  flex-basis: 0;
-  order: 1;
+	flex-basis: 0;
+	order: 1;
 }
 
 @mixin scale($factor) {
 	-webkit-transform: scale($factor);
-    -moz-transform: scale($factor);
-    -ms-transform: scale($factor);
-    -o-transform: scale($factor);
-    transform: scale($factor);
+	-moz-transform: scale($factor);
+	-ms-transform: scale($factor);
+	-o-transform: scale($factor);
+	transform: scale($factor);
 }
 
 @mixin transform-origin{
@@ -112,16 +112,16 @@ $font-context:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
 }
 
 * {
-    -webkit-overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 }
 
 // adjustment
 html, body{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden; 
 	background-color: $bg-color;
 	font-family: $font-noto;
 	font-weight: 400;
@@ -139,18 +139,18 @@ img {
 
 header.fixed-nav {
 	position: relative;
-    width: 100%;
+	width: 100%;
 	nav {
 		text-align: center;
-    	padding: 1.5rem;
-    	.navbar-brand {
-		    margin-right: 1.75rem;
-		    margin-left: 1rem;
+		padding: 1.5rem;
+		.navbar-brand {
+			margin-right: 1.75rem;
+			margin-left: 1rem;
 		}
 		.nav-item {
 			position: relative;
 			display: inline-block;
-			padding: 0 1.25rem;
+			padding: .25rem 1.25rem;
 			a {
 				font-size: 14px;
 				color: $theme-color;
@@ -169,12 +169,12 @@ header.fixed-nav {
 			display: inline;
 		}
 		.nav-item-new {
-		    position: absolute;
-		    top: -.75rem;
-		    color: red;
-		    letter-spacing: 1px;
-		    font-weight: 700;
-		    margin-left: -0.75rem;
+			position: absolute;
+			top: -.25rem;
+			color: red;
+			letter-spacing: 1px;
+			font-weight: 700;
+			margin-left: -0.75rem;
 		}
 	}
 }
@@ -182,9 +182,9 @@ header.fixed-nav {
 #topic {
 	margin-top: 1rem;
 	@include breakpoint($md) {
-	    margin-top: 0rem;
-	    background: #eee;
-	    padding: 3rem 0;
+		margin-top: 0rem;
+		background: #eee;
+		padding: 3rem 0;
 	}
 	position: relative;
 	.topic-content {
@@ -205,17 +205,17 @@ header.fixed-nav {
 			}
 		}
 		.date-line {
-		    display: inline-block;
-		    border-bottom: 1px solid #0C273A;
-		    height: 1px;
-		    width: 30px;
-		    @include breakpoint($device-md-up) {
-		    	width: 40px;
+			display: inline-block;
+			border-bottom: 1px solid #0C273A;
+			height: 1px;
+			width: 30px;
+			@include breakpoint($device-md-up) {
+				width: 40px;
 			}
 			@include breakpoint($device-xl-up) {
 				width: 49px;
 			}
-		    margin: 8px 5px;
+			margin: 8px 5px;
 		}
 		.place {
 			display: block;
@@ -234,13 +234,13 @@ header.fixed-nav {
 			font-size: 1.25rem;
 			margin-bottom: 1rem;
 		}
-    	.topic-tag {
-    		margin-top: 3rem;
-	    	color: $color-brown;
+		.topic-tag {
+			margin-top: 3rem;
+			color: $color-brown;
 		}
-    	.topic {
-    		width: 233px;
-    		height: auto;
+		.topic {
+			width: 233px;
+			height: auto;
 		}
 		.topic-english {
 			font-family: $font-ai;
@@ -253,7 +253,7 @@ header.fixed-nav {
 		.topic-slogan {
 			margin: 0 auto;
 		}
-	    
+
 	}
 	  //  <div class="h-gear"></div>
 			// <div class="h-l"></div>
@@ -261,63 +261,64 @@ header.fixed-nav {
 			// <div class="h-robot"></div>
 			// <div class="h-t"></div>
 			// <div class="h-oil"></div>
-	.components {
-		.h-gear {
-			position: absolute;
-			left: 5vh;
-			top: 20vh;
-			z-index: 10;
-			width: 116px;
+			.components {
+				.h-gear {
+					position: absolute;
+					left: 5vh;
+					top: 20vh;
+					z-index: 10;
+					width: 116px;
+				}
+				.h-gear-red {
+					position: absolute;
+					right: 20vh;
+					top: 80vh;
+					z-index: 10;
+					width: 107px;
+				}
+				.h-l {
+					position: absolute;
+					right: 35vh;
+					top: 65vh;
+					z-index: 10;
+					width: 123px;
+				}
+				.h-line {
+					position: absolute;
+					left: 5vh;
+					top: 40vh;
+					z-index: 10;
+					width: 44px;
+				}
+				.h-robot {
+					position: absolute;
+					left: 30vh;
+					top: 70vh;
+					z-index: 10;
+					width: 95px;
+				}
+				.h-t {
+					position: absolute;
+					left: 35vh;
+					top: 15vh;
+					z-index: 10;
+					width: 139px;
+				}
+				.h-oil {
+					position: absolute;
+					right: 35vh;
+					top: 20vh;
+					z-index: 10;
+					width: 67px;
+				}
+			}	
+			.topic-background {
+				width: 100%;
+				object-fit: cover;
+			}
 		}
-		.h-gear-red {
-			position: absolute;
-			right: 20vh;
-			top: 80vh;
-			z-index: 10;
-			width: 107px;
-		}
-		.h-l {
-			position: absolute;
-			right: 35vh;
-			top: 65vh;
-			z-index: 10;
-			width: 123px;
-		}
-		.h-line {
-			position: absolute;
-			left: 5vh;
-			top: 40vh;
-			z-index: 10;
-			width: 44px;
-		}
-		.h-robot {
-			position: absolute;
-			left: 30vh;
-			top: 70vh;
-			z-index: 10;
-			width: 95px;
-		}
-		.h-t {
-			position: absolute;
-			left: 35vh;
-			top: 15vh;
-			z-index: 10;
-			width: 139px;
-		}
-		.h-oil {
-			position: absolute;
-			right: 35vh;
-			top: 20vh;
-			z-index: 10;
-			width: 67px;
-		}
-	}	
-	.topic-background {
-		width: 100%;
-	    object-fit: cover;
-	}
-}
 
+<<<<<<< HEAD
 #timeline {
 	overflow-x: scroll;
 	-webkit-touch-overflow: scroll;
@@ -402,6 +403,128 @@ header.fixed-nav {
 
 
 }
+=======
+// .header {
+// 	position: relative;
+// 	height: 600px;
+// 	@include breakpoint($device-md-up) { height: 648px; }
+// 	@include breakpoint($device-xl-up) { height: 848px; }
+
+// 	.info {
+// 		position: absolute;
+// 		top: 122px;
+// 		left: 5px;	
+// 		@include breakpoint($device-md-up) {
+// 			top: 276px;
+// 			left: 79px;	
+// 		}
+// 		@include breakpoint($device-xl-up) {
+// 			top: 379px;
+// 			left: 70px;
+// 		}
+// 		color: $theme-color;
+// 		@include breakpoint($device-xs-only) {
+// 			text-align: center;
+// 			width: 300px;
+// 			margin: auto;
+// 		}
+// 		.year {
+// 			font-family: $font-ai;
+// 			line-height: 28px;
+// 			letter-spacing: 1.33;
+// 			font-size: 24px;
+// 			margin-bottom: 20px;
+// 			@include breakpoint($device-xs-only) {
+// 				font-size: 16px;
+// 				line-height: 18px;
+// 				letter-spacing: 0.9;
+// 			}
+// 		}
+// 		.topic {
+// 			@include breakpoint($device-xs-only) {
+// 				margin: 0 auto;
+// 			}
+// 			@include common-image('nctuartfest', 190px, 37px, 222px, 44px, 317px, 63px);
+// 		}
+// 		.topic-english {
+// 			margin-top: 6px;
+// 			font-family: $font-ai;
+// 			font-size: 20px;
+// 			letter-spacing: 1.11px;
+// 			line-height: 23px;
+// 			margin-bottom: 30px;
+// 			@include breakpoint($device-md-up) {
+// 				font-size: 24px;
+// 				letter-spacing: 1.33px;
+// 				line-height: 28px;
+// 			}
+// 			@include breakpoint($device-xl-up) {
+// 				font-size: 36px;
+// 				letter-spacing: 2px;
+// 				line-height: 42px;
+// 			}
+// 		}
+// 		.date {
+// 			font-family: $font-ai;
+// 			font-size: 16px;
+// 			letter-spacing: 0.8px;
+// 			line-height: 18px;
+// 			@include breakpoint($device-md-up) {
+// 				font-size: 20px;
+// 				letter-spacing: 1.11px;
+// 				line-height: 1.16;
+// 			}
+// 			@include breakpoint($device-xl-up) {
+// 				font-size: 24px;
+// 				letter-spacing: 1.33px;
+// 			}
+// 		}
+// 		.date-line {
+// 		    display: inline-block;
+// 		    border-bottom: 1px solid #0C273A;
+// 		    height: 1px;
+// 		    width: 30px;
+// 		    @include breakpoint($device-md-up) {
+// 		    	width: 40px;
+// 			}
+// 			@include breakpoint($device-xl-up) {
+// 				width: 49px;
+// 			}
+// 		    margin: 8px 5px;
+// 		}
+// 		.place {
+// 			font-weight: 300;
+// 			font-family: $font-noto;
+// 			font-size: 16px;
+// 			letter-spacing: 5px;
+// 			line-height: 24px;
+// 			@include breakpoint($device-md-up) {
+// 				font-size: 20px;
+// 				letter-spacing: 6.25px;
+// 				line-height: 1.16;
+// 			}
+// 			@include breakpoint($device-xl-up) {
+// 				font-size: 24px;
+// 				letter-spacing: 7.5px;
+// 			}
+// 		}
+// 	}
+// 	.sketch {
+// 		position: absolute;
+// 		top: 330px;
+// 			left: 19px;
+// 		@include breakpoint($device-md-up) {
+// 			top: 230px;
+// 			left: 363px;
+// 		}
+// 		@include breakpoint($device-xl-up) {
+// 			top: 200px;
+// 			left: 489px;
+// 		}
+// 		@include common-image('header-sketch', 267px, 261px, 298px, 291px, 533px, 546px);
+// 	}
+// }
+>>>>>>> e09a5bf5aebad54a1ee4a72a8595461fcf981c12
 
 #intro {
 
@@ -563,38 +686,29 @@ footer {
 	.date {
 		font-family: $font-ai;
 		color: $color-blue-dark;
-	    font-size: 1.25rem;
-	    letter-spacing: 2px;
-	    margin: 0;
-	    display: block;
-	    text-align: center;
-	    @include breakpoint($md) {
-	    	display: inline;
-	    	margin-bottom: 2rem;
-		    margin-top: -28px;
-		    margin-left: 100px;
-	    }
+		font-size: 1.25rem;
+		letter-spacing: 2px;
+		margin: 0;
+		display: block;
+		text-align: center;
 	}
 
 	.go-title {
 		color: $color-orange;
 		margin-bottom: 0;
-	    width: 280px;
-	    margin-left: -2px;
-	    text-align: center;
-	    margin: 0 auto;
-	    @include breakpoint($md) {
-	    	text-align: left;
-	    	margin: 0 0 0 -2px;
-	    }
+		width: 280px;
+		margin-left: -2px;
+		text-align: center;
+		margin: 0 auto;
 	}
 
 	.hashtags {
-		font-size: 0.75rem;
+		font-size: 0.9rem;
 		margin-bottom: 2rem;
 		letter-spacing: 4px;
-		color: $color-brown;
-
+		color: $color-orange;
+		width: 100%;
+		text-align: center;
 	}
 
 	.slogan {
@@ -602,10 +716,6 @@ footer {
 		text-align: center;
 		margin-top: 1rem;
 		margin-bottom: 1.5rem;
-	    @include breakpoint($md) {
-	    	text-align: left;
-	    	margin: 1.5rem 0 1rem 0;
-	    }
 	}
 
 	.space {
@@ -656,6 +766,7 @@ footer {
 	.item-title {
 		font-size: 1rem;
 		margin-top: .5rem;
+		padding-top: 1.5rem;
 		margin-bottom: 1rem;
 		color: $color-blue-medium;
 		border-bottom: 1px solid $color-blue-medium;
@@ -673,29 +784,11 @@ footer {
 	}
 
 	.description {
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 
 
-	.info-name {
-		font-size: 0.875rem;
-		color: $color-blue-dark;
-		letter-spacing: 3px;
-		margin: 1rem 0 .5rem 0;
-		a {
-			color: $color-blue-dark;
-			&:hover {
-				color: lighten($color-blue-dark, 10);
-				text-decoration: none;
-			}
-		}
-		&.brown {
-			color: $color-brown;
-		}
-		&.green {
-			color: $color-green;
-		}
-	}
+
 
 	#go-realpart-title {
 		.block-title {
@@ -779,14 +872,7 @@ footer {
 		}
 	}
 
-	#go-movie {
-		.info {
-			font-size: 0.9rem;
-		}
-		.movie-single {
-			margin-bottom: 1.5rem;
-		}
-	}
+
 
 	#go-goods {
 		.block-title {
@@ -838,7 +924,7 @@ footer {
 			}
 			&.orange {
 				background: $color-orange;
-					&:hover {
+				&:hover {
 					background: lighten($color-orange, 10);
 					text-decoration: none;
 				}
@@ -890,6 +976,34 @@ footer {
 
 	
 
+
+	.intro-img {
+		object-fit: cover;
+		width: 100%;
+		height: 300px;
+		@include breakpoint($xl) {
+			height: 300px;
+		}
+	}
+
+	.go-nightmarket {
+		position: relative;
+	}
+
+	.nightmarket-inner {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		font-size: 1.5rem;
+		color: $bg-color;
+	}
+
+	.nightmarket-img {
+		object-fit: cover;
+		width: 100%;
+		height: 250px;
+	}
+
 	.place {
 		display: inline-block;
 		// font-size: 0.875rem;
@@ -904,21 +1018,6 @@ footer {
 		}
 	}
 
-	.intro-img {
-		object-fit: cover;
-		width: 100%;
-		height: 300px;
-		@include breakpoint($xl) {
-			height: 300px;
-		}
-	}
-
-	.nightmarket-img {
-		object-fit: cover;
-		width: 100%;
-		height: 250px;
-	}
-
 }
 
 
@@ -929,3 +1028,101 @@ footer {
 		margin-bottom: 1.5rem;
 	}
 }
+
+#related {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding: 2rem 0;
+	border-top: 1px solid $color-brown;
+	border-bottom: 1px solid $color-brown;
+	text-align: center;
+	@include breakpoint($md) {
+		text-align: left;
+	}
+	.related-title {
+		font-size: 1rem;
+		letter-spacing: 3px;
+		font-weight: 300;
+		margin-bottom: .5rem;
+	}
+	.related-main {
+		margin-bottom: 1.5rem;
+		a {
+			color: $color-orange;
+			&:hover {
+				text-decoration: none;
+				color: lighten($color-orange, 10);
+			}
+		}
+	}
+	.related-list {
+		margin: 0 0 1rem 0;
+		padding: 0;
+		.related-item {
+			font-weight: 300;
+			list-style: none;
+			display: block;
+			a {
+				color: $color-brown;
+				&:hover {
+					color: lighten($color-brown, 10);
+					text-decoration: none;
+				}	
+			}
+			
+		}
+	}
+}
+
+#go-movie {
+	.info {
+		font-size: 0.9rem;
+	}
+	.movie-single {
+		margin-bottom: 1.5rem;
+	}
+}
+
+.info-name {
+	font-size: 0.875rem;
+	color: $color-blue-dark;
+	letter-spacing: 3px;
+	margin: 1rem 0 .5rem 0;
+	a {
+		color: $color-blue-dark;
+		&:hover {
+			color: lighten($color-blue-dark, 10);
+			text-decoration: none;
+		}
+	}
+	&.brown {
+		color: $color-brown;
+	}
+	&.green {
+		color: $color-green;
+	}
+}
+
+#sproject {
+	.place {
+		display: inline-block;
+		// font-size: 0.875rem;
+		color: $color-orange;
+		&.block {
+			display: block;
+			margin-top: .5rem;
+			margin-bottom: 1rem;
+		}
+		i {
+			margin-right: 0.25rem;
+		}
+	}
+	.sproject-title {
+		font-size: 1.5rem;
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+		color: $color-orange;
+	}
+}
+
+
